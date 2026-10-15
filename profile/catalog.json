@@ -1,6 +1,6 @@
 [
   {
-    "title": "Foundation models",
+    "title": "Foundation Models",
     "summary": "Adapt larger models with smaller client workloads.",
     "projects": [
       {
@@ -33,7 +33,7 @@
     "icon": "layers"
   },
   {
-    "title": "Efficient learning",
+    "title": "Efficient Collaborative Learning",
     "summary": "Reduce what clients need to communicate.",
     "projects": [
       {
@@ -62,7 +62,7 @@
     "icon": "efficiency"
   },
   {
-    "title": "Trustworthy learning",
+    "title": "Trustworthy Learning",
     "summary": "Learn with imperfect labels; study security and unlearning.",
     "projects": [
       {
@@ -98,7 +98,7 @@
     "icon": "shield"
   },
   {
-    "title": "Speech and audio",
+    "title": "Speech and Audio",
     "summary": "Learn across languages, domains and limited labels.",
     "projects": [
       {

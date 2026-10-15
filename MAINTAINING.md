@@ -27,6 +27,11 @@ the GitHub API rate limit. Never commit a token.
   omit a project from the profile while keeping it in the full project catalog.
 - `data/latest.json` records the current public repository catalog. API failures,
   malformed records and duplicates abort generation before any files are changed.
+- The compact star meter sums stars across all public project repositories,
+  including projects omitted from the highlighted grid, forks and archives.
+  The profile repository and website are excluded. It refreshes with the daily
+  catalog workflow; the displayed number is a snapshot, not a real-time stream.
+  Invalid or missing counts abort the refresh, preserving the last valid total.
 - The workflow uses GitHub's built-in token. Write access is limited to this
   repository; pull requests run validation only.
 

@@ -62,12 +62,16 @@ def select_projects(records):
             raise ValueError("Unexpected repository owner")
         if item.get("private") is not False or name.lower() in EXCLUDED:
             continue
+        stars = item.get("stargazers_count")
+        if type(stars) is not int or stars < 0:
+            raise ValueError(f"Invalid star count for {name}")
         projects.append({
             "name": name,
             "url": f"https://github.com/{ORG}/{name}",
             "description": item.get("description") or "Research code and resources.",
             "archived": bool(item.get("archived")),
             "fork": bool(item.get("fork")),
+            "stars": stars,
         })
     if not projects:
         raise ValueError("No public projects returned; preserving the previous snapshot")
@@ -85,6 +89,35 @@ def icon(name, size=18, label=""):
     return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg?v={ICON_REVISION}"><img src="{ASSET}/{name}-light.svg?v={ICON_REVISION}" width="{size}" height="{size}" align="absmiddle" alt="{escape(label, quote=True)}"></picture>'
 
 
+def star_meter_width(total):
+    return 36 + 11 * len(f"{total:,}")
+
+
+def render_star_meter(total, dark=False):
+    """A single crisp star and count, without a badge label or background."""
+    accent, foreground = ("#f2cc60", "#d6e2f1") if dark else ("#9a6700", "#34455b")
+    width = star_meter_width(total)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="28" viewBox="0 0 {width} 28" role="img" aria-labelledby="title">
+<title id="title">{total:,} GitHub stars</title>
+<g transform="translate(0 2)"><path d="m12 3 2.78 5.64 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.9Z" fill="{accent}" fill-opacity=".12" stroke="{accent}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="31" y="20" fill="{foreground}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="18" font-weight="600">{total:,}</text>
+</svg>\n'''
+
+
+def render_navigation(projects):
+    total = sum(project["stars"] for project in projects)
+    description = f"{total:,} GitHub stars across {len(projects)} public project repositories"
+    meter = (f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/star-meter-dark.svg?v={ICON_REVISION}-{total}">'
+             f'<img src="{ASSET}/star-meter-light.svg?v={ICON_REVISION}-{total}" width="{star_meter_width(total)}" height="28" '
+             f'align="absmiddle" alt="{description}"></picture>')
+    links = [
+        f'<a href="https://nousphera.github.io/" title="Noösphere · Research projects">{icon("projects-nav", 28, "Noösphere projects")}</a>',
+        f'<a href="https://vtsouval.github.io/" title="Vasileios Tsouvalas · Personal website">{icon("profile-nav", 28, "Personal website")}</a>',
+        f'<a href="https://github.com/orgs/{ORG}/repositories?sort=stargazers" title="{description}">{meter}</a>',
+    ]
+    return '<p align="center">\n  ' + ' &nbsp; · &nbsp;\n  '.join(links) + '\n</p>'
+
+
 def breakable_text(text):
     """Allow narrow GitHub table cells to wrap long compound terms naturally."""
     text = escape(text)
@@ -94,6 +127,7 @@ def breakable_text(text):
                         ("DeltaMask", "Delta<wbr>Mask"),
                         ("semi-supervised", "semi-<wbr>supervised"),
                         ("Semi-supervised", "Semi-<wbr>supervised"),
+                        ("Collaborative", "Collab<wbr>orative"),
                         ("Trustworthy", "Trust<wbr>worthy")):
         text = text.replace(word, split)
     return text
@@ -149,6 +183,7 @@ def render_catalog(catalog, projects):
 
 def render_profile(template, catalog, projects):
     return (template.replace("{{ASSET}}", ASSET).replace("{{ICON_REVISION}}", ICON_REVISION)
+            .replace("{{NAVIGATION}}", render_navigation(projects))
             .replace("{{CATALOG}}", render_catalog(catalog, projects)))
 
 
@@ -157,9 +192,12 @@ def build(root, records, today):
     catalog = json.loads((root / "profile/catalog.json").read_text())
     template = (root / "profile/README.template.md").read_text()
     readme = render_profile(template, catalog, projects)
-    latest = {"organization": ORG, "date": today, "excluded": sorted(EXCLUDED), "projects": projects}
+    stars = sum(project["stars"] for project in projects)
+    latest = {"organization": ORG, "date": today, "excluded": sorted(EXCLUDED), "stars": stars, "projects": projects}
     return {"README.md": readme, "profile/README.md": readme,
-            "data/latest.json": json.dumps(latest, indent=2)+"\n"}
+            "data/latest.json": json.dumps(latest, indent=2)+"\n",
+            "profile/assets/star-meter-light.svg": render_star_meter(stars),
+            "profile/assets/star-meter-dark.svg": render_star_meter(stars, dark=True)}
 
 
 

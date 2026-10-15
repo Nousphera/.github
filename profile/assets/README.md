@@ -4,7 +4,7 @@ Noösphere artwork is covered by the repository license, except the GitHub mark 
 
 - **Brand mark:** `brand-mark-light.svg` and `brand-mark-dark.svg`; transparent, 40-unit grid.
 - **Wordmark:** `wordmark-light.svg` and `wordmark-dark.svg`; transparent, scalable header identity.
-- **Icons:** 24-unit grid with explicit light/dark versions; 1.8-unit rounded strokes and a solid GitHub mark. Resource and direction icons display at 24 px; navigation icons at 20 px. The efficiency gauge represents computation and communication efficiency.
+- **Icons:** 24-unit grid with explicit light/dark versions; 1.8-unit rounded strokes and a solid GitHub mark. Resource and direction icons display at 24 px; navigation icons at 28 px. The efficiency gauge represents computation and communication efficiency.
 - **Hero:** desktop/mobile layouts, light/dark palettes, animated and static versions.
 
 Edit `scripts/build_visuals.py` and regenerate the artwork. Match each theme explicitly with a `<picture>` element; keep descriptive text beside decorative icons. Do not stretch the brand mark or change stroke widths independently.
@@ -18,3 +18,7 @@ Inline images use GitHub-supported `align="absmiddle"` to keep symbols centered 
 After changing icon artwork, increment `ICON_REVISION` in `scripts/update_profile.py` before regenerating the profile. This refreshes GitHub’s image proxy without changing the stable asset filenames.
 
 The paper-sheet and gauge artwork use `article-*.svg` and `efficiency-*.svg`. Earlier filenames are retained for cached README versions. Resource pairs use Unicode word joiners so their two links wrap together on small screens.
+
+## Compact navigation
+
+`projects-nav-*.svg` and `profile-nav-*.svg` link to the project website and personal profile. `scripts/update_profile.py` generates `star-meter-*.svg` from the validated public repository total. The meter contains only a star and its count; accessible labels and hover text describe the destination and scope. Light/dark variants share the same geometry and baseline.

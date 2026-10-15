@@ -5,111 +5,127 @@
     ".github",
     "nousphera.github.io"
   ],
+  "stars": 9,
   "projects": [
     {
       "name": "AE_PSL",
       "url": "https://github.com/Nousphera/AE_PSL",
       "description": "Communication-efficient parallel split learning with aligned autoencoders.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 2
     },
     {
       "name": "DA_MLDG",
       "url": "https://github.com/Nousphera/DA_MLDG",
       "description": "Domain-aware meta-learning for speech emotion recognition across domains.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "DeltaMask",
       "url": "https://github.com/Nousphera/DeltaMask",
       "description": "Communication-efficient federated fine-tuning of vision foundation models through compressed binary masks.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "EFU",
       "url": "https://github.com/Nousphera/EFU",
       "description": "Federated unlearning through functional encryption.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "EncCluster",
       "url": "https://github.com/Nousphera/EncCluster",
       "description": "Functional encryption for federated learning with weight clustering and probabilistic filters.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FedCode",
       "url": "https://github.com/Nousphera/FedCode",
       "description": "Communication-efficient federated learning through codebook exchange.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FedCompress",
       "url": "https://github.com/Nousphera/FedCompress",
       "description": "Communication-efficient federated learning through adaptive weight clustering and server-side distillation.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FedLN",
       "url": "https://github.com/Nousphera/FedLN",
       "description": "Federated learning with noisy labels through label correction, distillation and noise-aware aggregation.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FedSER",
       "url": "https://github.com/Nousphera/FedSER",
       "description": "Semi-supervised federated learning for speech emotion recognition.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FedSTAR",
       "url": "https://github.com/Nousphera/FedSTAR",
       "description": "Semi-supervised federated audio recognition through self-training.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "FiBA",
       "url": "https://github.com/Nousphera/FiBA",
       "description": "Invisible backdoor attacks and defenses in federated learning.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "MaTU",
       "url": "https://github.com/Nousphera/MaTU",
       "description": "Many-task federated fine-tuning through unified task vectors.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "MPSL",
       "url": "https://github.com/Nousphera/MPSL",
       "description": "Fine-tuning multimodal models using parallel split learning.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 7
     },
     {
       "name": "PLiX",
       "url": "https://github.com/Nousphera/PLiX",
       "description": "Plug-and-play multilingual few-shot spoken word recognition.",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     },
     {
       "name": "SDAPT",
       "url": "https://github.com/Nousphera/SDAPT",
       "description": "Split-based Domain Adaptive Pre-Training for VFMs",
       "archived": false,
-      "fork": false
+      "fork": false,
+      "stars": 0
     }
   ]
 }

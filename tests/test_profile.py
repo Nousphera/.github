@@ -43,6 +43,26 @@ class ProfileTests(unittest.TestCase):
             with self.subTest(records=records), self.assertRaises(ValueError):
                 profile.select_projects(records)
 
+    def test_star_total_includes_all_public_projects_but_not_site_or_private_repos(self):
+        projects = profile.select_projects([
+            repo(".github", 90), repo("nousphera.github.io", 80),
+            repo("Private", 70, private=True), repo("Highlighted", 7),
+            repo("OtherPublicProject", 2), repo("Archived", 3, archived=True),
+            repo("Fork", 4, fork=True),
+        ])
+        navigation = profile.render_navigation(projects)
+        self.assertIn("16 GitHub stars across 4 public project repositories", navigation)
+        self.assertIn('href="https://vtsouval.github.io/"', navigation)
+        self.assertIn('href="https://nousphera.github.io/"', navigation)
+        self.assertNotIn("#publications", navigation)
+        self.assertEqual(navigation.count("<a "), 3)
+        self.assertEqual(navigation.count("&nbsp; · &nbsp;"), 2)
+
+    def test_invalid_star_counts_abort_instead_of_publishing_a_false_total(self):
+        for count in [-1, True, "9", None, 2.5]:
+            with self.subTest(count=count), self.assertRaises(ValueError):
+                profile.select_projects([repo("Example", count)])
+
     def test_new_projects_are_discoverable_and_metadata_is_escaped(self):
         projects = profile.select_projects([repo("New", description='[link](https://bad.example) | <img>\n**bold**')])
         text = profile.render_catalog([], projects)
