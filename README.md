@@ -19,9 +19,36 @@
   <a href="https://github.com/orgs/Nousphera/repositories?sort=stargazers" title="9 GitHub stars across 15 public project repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/star-meter-dark.svg?v=2-9"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/star-meter-light.svg?v=2-9" width="47" height="28" align="absmiddle" alt="9 GitHub stars across 15 public project repositories"></picture></a>
 </p>
 
-Research code for **collaborative, efficient and trustworthy machine learning**—from federated and split learning to foundation models at the edge.
-
 ### Highlighted Research Projects
+
+<p align="center"><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-dark-static.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-light-static.svg">
+<source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-dark-static.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-light-static.svg">
+<source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-dark.svg">
+<source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-light.svg">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-dark.svg">
+<img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-light.svg" width="960" alt="Foundation Models; Efficient Collaborative Learning; Trustworthy Learning; Speech and Audio">
+</picture></p>
+
+<table><tr><td nowrap>
+<a href="https://nousphera.github.io/MPSL/" title="MPSL · Foundation Models · Parallel split learning for multimodal fine-tuning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-MPSL-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-MPSL-light.svg" width="69" height="30" align="absmiddle" alt="Open MPSL · Foundation Models"></picture></a>
+<a href="https://nousphera.github.io/DeltaMask/" title="DeltaMask · Foundation Models · Binary masks for efficient federated fine-tuning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-DeltaMask-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-DeltaMask-light.svg" width="96" height="30" align="absmiddle" alt="Open DeltaMask · Foundation Models"></picture></a>
+<a href="https://nousphera.github.io/MaTU/" title="MaTU · Foundation Models · Unified task vectors for many-task federated adaptation."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-MaTU-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-MaTU-light.svg" width="68" height="30" align="absmiddle" alt="Open MaTU · Foundation Models"></picture></a>
+<a href="https://github.com/Nousphera/SDAPT" title="SDAPT · Foundation Models · Domain-adaptive pretraining through split learning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-SDAPT-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-SDAPT-light.svg" width="74" height="30" align="absmiddle" alt="Open SDAPT · Foundation Models"></picture></a>
+<a href="https://nousphera.github.io/AE_PSL/" title="AE-PSL · Efficient Collaborative Learning · Aligned autoencoders for compact split learning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-AE_PSL-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-AE_PSL-light.svg" width="79" height="30" align="absmiddle" alt="Open AE-PSL · Efficient Collaborative Learning"></picture></a>
+<a href="https://nousphera.github.io/FedCompress/" title="FedCompress · Efficient Collaborative Learning · Weight clustering + distillation for compact updates."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedCompress-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedCompress-light.svg" width="114" height="30" align="absmiddle" alt="Open FedCompress · Efficient Collaborative Learning"></picture></a>
+<a href="https://nousphera.github.io/FedCode/" title="FedCode · Efficient Collaborative Learning · Codebook exchange for efficient federated learning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedCode-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedCode-light.svg" width="84" height="30" align="absmiddle" alt="Open FedCode · Efficient Collaborative Learning"></picture></a>
+<a href="https://nousphera.github.io/FedLN/" title="FedLN · Trustworthy Learning · Label-noise handling at three federated intervention points."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedLN-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedLN-light.svg" width="72" height="30" align="absmiddle" alt="Open FedLN · Trustworthy Learning"></picture></a>
+<a href="https://nousphera.github.io/EncCluster/" title="EncCluster · Trustworthy Learning · Functional encryption + clustering for scalable federated learning."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-EncCluster-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-EncCluster-light.svg" width="101" height="30" align="absmiddle" alt="Open EncCluster · Trustworthy Learning"></picture></a>
+<a href="https://nousphera.github.io/EFU/" title="EFU · Trustworthy Learning · Federated unlearning enforced through functional encryption."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-EFU-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-EFU-light.svg" width="60" height="30" align="absmiddle" alt="Open EFU · Trustworthy Learning"></picture></a>
+<a href="https://nousphera.github.io/FedSTAR/" title="FedSTAR · Speech and Audio · Self-training for label-efficient federated audio recognition."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedSTAR-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedSTAR-light.svg" width="88" height="30" align="absmiddle" alt="Open FedSTAR · Speech and Audio"></picture></a>
+<a href="https://nousphera.github.io/FedSER/" title="FedSER · Speech and Audio · Semi-supervised learning for federated emotion recognition."><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedSER-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/project-FedSER-light.svg" width="80" height="30" align="absmiddle" alt="Open FedSER · Speech and Audio"></picture></a>
+</td></tr></table>
+
+<details>
+<summary>Paper &amp; code links</summary>
 
 <table width="100%">
 <tr>
@@ -53,3 +80,5 @@ Research code for **collaborative, efficient and trustworthy machine learning**�
 </td>
 </tr>
 </table>
+
+</details>

@@ -1,5 +1,9 @@
 """Generate the profile's theme-aware SVG artwork; see assets for attribution."""
+import json
+from html import escape
 from pathlib import Path
+
+from update_profile import project_tag_width
 
 ROOT = Path(__file__).resolve().parents[1] / "profile/assets"
 
@@ -95,8 +99,88 @@ ICONS = {
 }
 
 
+PALETTE = {
+    "layers": ("#3263a8", "#9ac2ff"),
+    "efficiency": ("#217568", "#80d1c0"),
+    "shield": ("#6c50a2", "#c4afff"),
+    "audio": ("#996321", "#e5bb78"),
+}
+
+
+def research_overview(catalog, dark=False, mobile=False, static=False):
+    """One responsive visual key; motion is decorative, never a source of meaning."""
+    w, h = (400, 368) if mobile else (960, 184)
+    cw, ch = (200, 184) if mobile else (240, 184)
+    bg, fg, muted, border = ("#0f1721", "#e9f0f8", "#a3b3c5", "#2b3c51") if dark else ("#f7f9fc", "#20334d", "#56677d", "#dce4ee")
+    parts = []
+    phrases = {"layers": "Adapt · Split · Fine-tune", "efficiency": "Compress · Share · Scale",
+               "shield": "Noise · Privacy · Unlearning", "audio": "Speech · Emotion · Audio"}
+    lines = {"layers": ["Foundation", "Models"],
+             "efficiency": ["Efficient", "Collaborative", "Learning"] if mobile else ["Efficient", "Collaborative Learning"],
+             "shield": ["Trustworthy", "Learning"], "audio": ["Speech and", "Audio"]}
+    for i, group in enumerate(catalog):
+        x, y = ((i % 2) * cw, (i // 2) * ch) if mobile else (i * cw, 0)
+        name = group["icon"]
+        accent = PALETTE[name][dark]
+        title_lines = lines[name]
+        size = 20 if mobile else 19
+        title_top = 79 if mobile and len(title_lines) == 3 else 91
+        headings = "".join(f'<text x="{cw/2}" y="{title_top+n*25}" font-size="{size}" font-weight="620" fill="{fg}">{escape(line)}</text>' for n, line in enumerate(title_lines))
+        # Shared color and geometry create a visual key for the linked tags below.
+        parts.append(f'''<g transform="translate({x} {y})">
+<rect class="wash" x="5" y="5" width="{cw-10}" height="{ch-10}" rx="13" fill="{accent}" style="animation-delay:{-12+i*3}s"/>
+<g transform="translate({cw/2-17} 19) scale(1.4167)" color="{accent}" fill="none" stroke="{accent}" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</g>
+{headings}
+<text x="{cw/2}" y="155" fill="{muted}" font-size="{'12.5' if mobile else '13'}">{escape(phrases[name])}</text>
+<path d="M{cw/2-24} 168h48" stroke="{accent}" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+<path class="signal" d="M{cw/2-24} 168h48" pathLength="100" stroke="{accent}" stroke-width="2" stroke-linecap="round" style="animation-delay:{-12+i*3}s"/>
+</g>''')
+    separators = ('<path d="M200 17v334M17 184h366"/>' if mobile else '<path d="M240 17v150M480 17v150M720 17v150"/>')
+    freeze = '.wash{animation:none;opacity:.04}.signal{animation:none;stroke-dasharray:none;opacity:.35}' if static else ''
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">
+<title id="title">Four research directions</title><desc id="desc">{escape('; '.join(g['title'] for g in catalog))}. Matching icons and colors identify the project links below.</desc>
+<style>
+text{{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;text-anchor:middle}}
+.wash{{opacity:.025;animation:highlight 12s ease-in-out infinite}}
+.signal{{stroke-dasharray:20 100;animation:signal 12s ease-in-out infinite}}
+@keyframes highlight{{0%,22%,100%{{opacity:.025}}8%,15%{{opacity:.12}}}}
+@keyframes signal{{0%{{stroke-dashoffset:24;opacity:0}}5%{{opacity:1}}20%{{stroke-dashoffset:-100;opacity:0}}100%{{stroke-dashoffset:-100;opacity:0}}}}
+@media(prefers-reduced-motion:reduce){{.wash{{animation:none;opacity:.04}}.signal{{animation:none;stroke-dasharray:none;opacity:.35}}}}
+{freeze}
+</style>
+<rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="16" fill="{bg}" stroke="{border}"/>
+<g fill="none" stroke="{border}" opacity=".8">{separators}</g>
+{''.join(parts)}
+</svg>\n'''
+
+
+def project_tag(group, project, dark=False):
+    label = project.get("label", project["repo"])
+    width = project_tag_width(label)
+    accent = PALETTE[group["icon"]][dark]
+    background = "#0d1117" if dark else "#ffffff"
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="30" viewBox="0 0 {width} 30" role="img" aria-labelledby="title">
+<title id="title">{escape(label)} · {escape(group['title'])}</title>
+<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{background}"/>
+<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{accent}" fill-opacity=".08" stroke="{accent}" stroke-opacity=".38"/>
+<g transform="translate(7 8.5) scale(.541667)" color="{accent}" fill="none" stroke="{accent}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[group['icon']]}</g>
+<text x="25" y="19.2" fill="{accent}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">{escape(label)}</text>
+</svg>\n'''
+
+
 def main():
     ROOT.mkdir(parents=True, exist_ok=True)
+    catalog = json.loads((ROOT.parent / "catalog.json").read_text())
+    for dark in (False, True):
+        theme = "dark" if dark else "light"
+        for mobile in (False, True):
+            for static in (False, True):
+                name = f'research-overview-{"mobile-" if mobile else ""}{theme}{"-static" if static else ""}.svg'
+                (ROOT/name).write_text(research_overview(catalog, dark, mobile, static))
+        for group in catalog:
+            for project in group["projects"]:
+                if project.get("highlighted", True):
+                    (ROOT/f'project-{project["repo"]}-{theme}.svg').write_text(project_tag(group, project, dark))
     for dark in (False, True):
         for mobile in (False, True):
             name = f'hero-{"mobile-" if mobile else ""}{"dark" if dark else "light"}.svg'

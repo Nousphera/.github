@@ -145,8 +145,52 @@ def concept_summary(project):
     return f"{breakable_text(before)}<strong>{breakable_text(concept)}</strong>{breakable_text(after)}"
 
 
+def project_tag_width(label):
+    """Readable 12px labels with room for the direction icon and touch target."""
+    return round(37 + sum(3.5 if c in "ilI" else 4.5 if c == "-" else
+                          9.5 if c in "MWmw" else 7.5 if c.isupper() else 6.5
+                          for c in label))
+
+
+def render_overview(catalog, projects):
+    live = {p["name"]: p for p in projects}
+    description = "; ".join(group["title"] for group in catalog)
+    sources = []
+    for mobile, reduced, dark in ((True, True, True), (True, True, False),
+                                   (False, True, True), (False, True, False),
+                                   (True, False, True), (True, False, False),
+                                   (False, False, True)):
+        media = []
+        if reduced:
+            media.append("(prefers-reduced-motion: reduce)")
+        if mobile:
+            media.append("(max-width: 600px)")
+        if dark:
+            media.append("(prefers-color-scheme: dark)")
+        name = f'research-overview-{"mobile-" if mobile else ""}{"dark" if dark else "light"}{"-static" if reduced else ""}.svg'
+        sources.append(f'<source media="{" and ".join(media)}" srcset="{ASSET}/{name}">')
+    picture = '<p align="center"><picture>\n' + "\n".join(sources)
+    picture += f'\n<img src="{ASSET}/research-overview-light.svg" width="960" alt="{escape(description, quote=True)}">\n</picture></p>'
+    tags = []
+    for group in catalog:
+        for project in group["projects"]:
+            name = project["repo"]
+            if name not in live or not project.get("highlighted", True):
+                continue
+            label = project.get("label", name)
+            target = project.get("project") or live[name]["url"]
+            hint = f'{label} · {group["title"]} · {project["summary"]}'
+            tags.append(f'<a href="{escape(target, quote=True)}" title="{escape(hint, quote=True)}">'
+                        f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/project-{name}-dark.svg">'
+                        f'<img src="{ASSET}/project-{name}-light.svg" width="{project_tag_width(label)}" height="30" '
+                        f'align="absmiddle" alt="Open {escape(label, quote=True)} · {escape(group["title"], quote=True)}"></picture></a>')
+    # GitHub preserves nowrap and gives tables native horizontal scrolling.
+    # Keep real links so keyboard focus scrolls each project into view.
+    return picture + '\n\n<table><tr><td nowrap>\n' + '\n'.join(tags) + '\n</td></tr></table>'
+
+
 def render_catalog(catalog, projects):
-    """Four research directions in a GitHub-native, two-column table."""
+    """Animated overview and linked tags, with optional native resource details."""
     live = {p["name"]: p for p in projects}
     known, cells = set(), []
     for group in catalog:
@@ -174,6 +218,10 @@ def render_catalog(catalog, projects):
                          + "\n".join(entries) + "\n</td>")
     rows = ["<tr>\n" + "\n".join(cells[i:i+2]) + "\n</tr>" for i in range(0, len(cells), 2)]
     grid = '<table width="100%">\n' + "\n".join(rows) + "\n</table>"
+    if cells:
+        grid = (render_overview(catalog, projects)
+                + '\n\n<details>\n<summary>Paper &amp; code links</summary>\n\n'
+                + grid + '\n\n</details>')
     extra = [p for p in projects if p["name"] not in known]
     if extra:
         rows = [f'| **[{p["name"]}]({p["url"]})** | {safe_text(p["description"])} |' for p in extra]

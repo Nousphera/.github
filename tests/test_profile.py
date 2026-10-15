@@ -89,6 +89,24 @@ class ProfileTests(unittest.TestCase):
         self.assertNotIn("Hidden", text)
         self.assertNotIn("More projects", text)
 
+    def test_overview_uses_one_tag_per_public_highlight_and_keeps_resource_links(self):
+        catalog = json.loads((profile.ROOT / "profile/catalog.json").read_text())
+        records = [repo(p["repo"]) for g in catalog for p in g["projects"]]
+        text = profile.render_catalog(catalog, profile.select_projects(records))
+        overview, resources = text.split("<details>", 1)
+        self.assertEqual(overview.count('alt="Open '), 12)
+        self.assertEqual(overview.count("<table>"), 1)
+        self.assertIn("<td nowrap>", overview)
+        self.assertIn("research-overview-mobile-dark-static.svg", overview)
+        self.assertIn("prefers-reduced-motion: reduce", overview)
+        for group in catalog:
+            self.assertIn(group["title"], overview)
+        for name in ("PLiX", "DA_MLDG", "FiBA"):
+            self.assertNotIn(f"project-{name}-", overview)
+        self.assertIn("https://doi.org/10.1145/3626242", resources)
+        self.assertIn("https://github.com/Nousphera/FedLN", resources)
+        self.assertNotIn("<script", text)
+
     def test_both_readmes_share_the_same_complete_generated_content(self):
         catalog = json.loads((profile.ROOT / "profile/catalog.json").read_text())
         records = [repo(p["repo"], 1) for g in catalog for p in g["projects"]]
@@ -101,7 +119,7 @@ class ProfileTests(unittest.TestCase):
             self.assertEqual(outputs["README.md"], outputs["profile/README.md"])
             self.assertNotIn("{{", outputs["README.md"])
             self.assertEqual(outputs["README.md"].count('<td width="50%" valign="top">'), 4)
-            self.assertEqual(outputs["README.md"].count("<tr>"), 2)
+            self.assertEqual(outputs["README.md"].count("<tr>"), 3)
             self.assertNotIn("star-tracker", outputs["README.md"])
             self.assertNotIn("Star tracker", outputs["README.md"])
             self.assertEqual(list(root.glob("data/*")), [])

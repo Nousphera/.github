@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="101" height="30" viewBox="0 0 101 30" role="img" aria-labelledby="title">
+<title id="title">EncCluster · Trustworthy Learning</title>
+<rect x=".5" y="2.5" width="100" height="25" rx="12.5" fill="#ffffff"/>
+<rect x=".5" y="2.5" width="100" height="25" rx="12.5" fill="#6c50a2" fill-opacity=".08" stroke="#6c50a2" stroke-opacity=".38"/>
+<g transform="translate(7 8.5) scale(.541667)" color="#6c50a2" fill="none" stroke="#6c50a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v5c0 4.8-3.4 8.2-8 10-4.6-1.8-8-5.2-8-10V6ZM8.5 11.5l2.5 2.5 4.5-5"/></g>
+<text x="25" y="19.2" fill="#6c50a2" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">EncCluster</text>
+</svg>

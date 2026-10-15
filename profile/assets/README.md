@@ -22,3 +22,15 @@ The paper-sheet and gauge artwork use `article-*.svg` and `efficiency-*.svg`. Ea
 ## Compact navigation
 
 `projects-nav-*.svg` and `profile-nav-*.svg` link to the project website and personal profile. `scripts/update_profile.py` generates `star-meter-*.svg` from the validated public repository total. The meter contains only a star and its count; accessible labels and hover text describe the destination and scope. Light/dark variants share the same geometry and baseline.
+
+## Research overview and project tags
+
+`research-overview-*.svg` is one visual key for the four directions, with desktop/mobile,
+light/dark and reduced-motion variants. Gentle color emphasis and traveling underline
+signals are decorative; titles remain visible throughout. The overview does not imply
+that the categories form sequential stages.
+
+`project-<repository>-*.svg` tags repeat each direction's icon and color. They are normal
+links in the README, with an accessible project/category label and a compact hover
+description. A single horizontal strip scrolls on smaller screens. The scheduled workflow
+rebuilds these assets alongside the catalog so changes stay consistent.

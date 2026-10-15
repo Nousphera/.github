@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="30" viewBox="0 0 80 30" role="img" aria-labelledby="title">
+<title id="title">FedSER · Speech and Audio</title>
+<rect x=".5" y="2.5" width="79" height="25" rx="12.5" fill="#0d1117"/>
+<rect x=".5" y="2.5" width="79" height="25" rx="12.5" fill="#e5bb78" fill-opacity=".08" stroke="#e5bb78" stroke-opacity=".38"/>
+<g transform="translate(7 8.5) scale(.541667)" color="#e5bb78" fill="none" stroke="#e5bb78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M8 6v12M12 3v18M16 6v12M20 9v6"/></g>
+<text x="25" y="19.2" fill="#e5bb78" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">FedSER</text>
+</svg>

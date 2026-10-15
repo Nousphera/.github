@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="184" viewBox="0 0 960 184" role="img" aria-labelledby="title desc">
+<title id="title">Four research directions</title><desc id="desc">Foundation Models; Efficient Collaborative Learning; Trustworthy Learning; Speech and Audio. Matching icons and colors identify the project links below.</desc>
+<style>
+text{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;text-anchor:middle}
+.wash{opacity:.025;animation:highlight 12s ease-in-out infinite}
+.signal{stroke-dasharray:20 100;animation:signal 12s ease-in-out infinite}
+@keyframes highlight{0%,22%,100%{opacity:.025}8%,15%{opacity:.12}}
+@keyframes signal{0%{stroke-dashoffset:24;opacity:0}5%{opacity:1}20%{stroke-dashoffset:-100;opacity:0}100%{stroke-dashoffset:-100;opacity:0}}
+@media(prefers-reduced-motion:reduce){.wash{animation:none;opacity:.04}.signal{animation:none;stroke-dasharray:none;opacity:.35}}
+
+</style>
+<rect x=".5" y=".5" width="959" height="183" rx="16" fill="#f7f9fc" stroke="#dce4ee"/>
+<g fill="none" stroke="#dce4ee" opacity=".8"><path d="M240 17v150M480 17v150M720 17v150"/></g>
+<g transform="translate(0 0)">
+<rect class="wash" x="5" y="5" width="230" height="174" rx="13" fill="#3263a8" style="animation-delay:-12s"/>
+<g transform="translate(103.0 19) scale(1.4167)" color="#3263a8" fill="none" stroke="#3263a8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></g>
+<text x="120.0" y="91" font-size="19" font-weight="620" fill="#20334d">Foundation</text><text x="120.0" y="116" font-size="19" font-weight="620" fill="#20334d">Models</text>
+<text x="120.0" y="155" fill="#56677d" font-size="13">Adapt · Split · Fine-tune</text>
+<path d="M96.0 168h48" stroke="#3263a8" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+<path class="signal" d="M96.0 168h48" pathLength="100" stroke="#3263a8" stroke-width="2" stroke-linecap="round" style="animation-delay:-12s"/>
+</g><g transform="translate(240 0)">
+<rect class="wash" x="5" y="5" width="230" height="174" rx="13" fill="#217568" style="animation-delay:-9s"/>
+<g transform="translate(103.0 19) scale(1.4167)" color="#217568" fill="none" stroke="#217568" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a9 9 0 1 1 16 0M5 12h2M12 5v2M17 12h2M12 14l4-5"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></g>
+<text x="120.0" y="91" font-size="19" font-weight="620" fill="#20334d">Efficient</text><text x="120.0" y="116" font-size="19" font-weight="620" fill="#20334d">Collaborative Learning</text>
+<text x="120.0" y="155" fill="#56677d" font-size="13">Compress · Share · Scale</text>
+<path d="M96.0 168h48" stroke="#217568" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+<path class="signal" d="M96.0 168h48" pathLength="100" stroke="#217568" stroke-width="2" stroke-linecap="round" style="animation-delay:-9s"/>
+</g><g transform="translate(480 0)">
+<rect class="wash" x="5" y="5" width="230" height="174" rx="13" fill="#6c50a2" style="animation-delay:-6s"/>
+<g transform="translate(103.0 19) scale(1.4167)" color="#6c50a2" fill="none" stroke="#6c50a2" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v5c0 4.8-3.4 8.2-8 10-4.6-1.8-8-5.2-8-10V6ZM8.5 11.5l2.5 2.5 4.5-5"/></g>
+<text x="120.0" y="91" font-size="19" font-weight="620" fill="#20334d">Trustworthy</text><text x="120.0" y="116" font-size="19" font-weight="620" fill="#20334d">Learning</text>
+<text x="120.0" y="155" fill="#56677d" font-size="13">Noise · Privacy · Unlearning</text>
+<path d="M96.0 168h48" stroke="#6c50a2" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+<path class="signal" d="M96.0 168h48" pathLength="100" stroke="#6c50a2" stroke-width="2" stroke-linecap="round" style="animation-delay:-6s"/>
+</g><g transform="translate(720 0)">
+<rect class="wash" x="5" y="5" width="230" height="174" rx="13" fill="#996321" style="animation-delay:-3s"/>
+<g transform="translate(103.0 19) scale(1.4167)" color="#996321" fill="none" stroke="#996321" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M8 6v12M12 3v18M16 6v12M20 9v6"/></g>
+<text x="120.0" y="91" font-size="19" font-weight="620" fill="#20334d">Speech and</text><text x="120.0" y="116" font-size="19" font-weight="620" fill="#20334d">Audio</text>
+<text x="120.0" y="155" fill="#56677d" font-size="13">Speech · Emotion · Audio</text>
+<path d="M96.0 168h48" stroke="#996321" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+<path class="signal" d="M96.0 168h48" pathLength="100" stroke="#996321" stroke-width="2" stroke-linecap="round" style="animation-delay:-3s"/>
+</g>
+</svg>

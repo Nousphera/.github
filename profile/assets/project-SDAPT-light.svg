@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="30" viewBox="0 0 74 30" role="img" aria-labelledby="title">
+<title id="title">SDAPT · Foundation Models</title>
+<rect x=".5" y="2.5" width="73" height="25" rx="12.5" fill="#ffffff"/>
+<rect x=".5" y="2.5" width="73" height="25" rx="12.5" fill="#3263a8" fill-opacity=".08" stroke="#3263a8" stroke-opacity=".38"/>
+<g transform="translate(7 8.5) scale(.541667)" color="#3263a8" fill="none" stroke="#3263a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></g>
+<text x="25" y="19.2" fill="#3263a8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">SDAPT</text>
+</svg>

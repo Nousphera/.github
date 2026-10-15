@@ -21,9 +21,11 @@ the GitHub API rate limit. Never commit a token.
 - Only public project repositories owned by Nousphera are shown; `.github` and
   `nousphera.github.io` are excluded. Newly public projects appear in **More
   projects** until assigned a direction in `profile/catalog.json`.
-- The four curated directions form a two-by-two table. Each project title links
-  to its project page when available, otherwise to its repository. Code and paper
-  links are optional; add only published resources. Set `highlighted: false` to
+- The four curated directions share an animated overview: one row on desktop,
+  two columns on phones, with a matching strip of colored project tags below.
+  Each tag links to its project page when available, otherwise to its repository.
+  Paper and code links live in a native, collapsed disclosure. Add only published
+  resources. Set `highlighted: false` to
   omit a project from the profile while keeping it in the full project catalog.
 - `data/latest.json` records the current public repository catalog. API failures,
   malformed records and duplicates abort generation before any files are changed.
@@ -42,9 +44,14 @@ desktop/mobile and light/dark variants. Its subtle word and network animation
 uses a dedicated static image under `prefers-reduced-motion`, including when
 embedded in GitHub’s image renderer. Essential meaning is present in the image
 alt text and visible prose, so animation is never required to understand the page.
-The research grid uses native tables and ordinary links that work with keyboards
+The research overview has static reduced-motion variants. Project tags use normal
+links with meaningful alternative text and hover descriptions. A native horizontal
+table scrolls on narrow screens and brings focused links into view. Color and
+category icons identify each direction together.
+The collapsed resource grid uses native tables and ordinary links that work with keyboards
 and touch. Original vector assets are included under this repository's license. The GitHub
 mark retains its upstream MIT license in `profile/assets/LICENSE-octicons.txt`.
 
 The organization profile is a GitHub README, so layout uses supported Markdown,
-`<picture>` images and native tables. Custom page scripts are not used.
+`<picture>` images, a native disclosure and tables. Custom page scripts are not used;
+tags navigate to projects rather than filtering the README in place.

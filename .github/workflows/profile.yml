@@ -53,10 +53,12 @@ jobs:
       - name: Refresh public project catalog and star total
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/update_profile.py
+        run: |
+          python scripts/build_visuals.py
+          python scripts/update_profile.py
       - name: Publish changed profile data
         run: |
-          git add README.md profile/README.md data/ profile/assets/star-meter-light.svg profile/assets/star-meter-dark.svg
+          git add README.md profile/README.md data/ profile/assets/
           git diff --cached --check
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
