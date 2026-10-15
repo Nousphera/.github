@@ -38,7 +38,8 @@ uses a dedicated static image under `prefers-reduced-motion`, including when
 embedded in GitHub’s image renderer. Essential meaning is present in the image
 alt text and visible prose, so animation is never required to understand the page.
 The research grid uses native tables and ordinary links that work with keyboards
-and touch. Original vector assets are included under this repository's license.
+and touch. Original vector assets are included under this repository's license. The GitHub
+mark retains its upstream MIT license in `profile/assets/LICENSE-octicons.txt`.
 
 The organization profile is a GitHub README, so layout uses supported Markdown,
 `<picture>` images and native tables. Custom page scripts are not used.

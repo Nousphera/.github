@@ -1,4 +1,4 @@
-"""Generate the profile's original, theme-aware SVG artwork."""
+"""Generate the profile's theme-aware SVG artwork; see assets for attribution."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1] / "profile/assets"
@@ -81,11 +81,12 @@ def hero(dark=False, mobile=False, static=False):
 
 ICONS = {
     "projects": '<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v16H6.5A2.5 2.5 0 0 1 4 17.5ZM4 17.5A2.5 2.5 0 0 1 6.5 15H20"/><path d="m11 7-2 2 2 2m4-4 2 2-2 2" stroke-width="1.6"/>',
-    "code": '<path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16"/>',
+    # GitHub Octicons mark-github-24, MIT; license retained in profile/assets.
+    "code": '<path fill="currentColor" stroke="none" d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>',
     "person": '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-1.5a7 7 0 0 1 14 0V20"/>',
-    "paper": '<path d="M6.5 3h7l5 5v13h-13V4a1 1 0 0 1 1-1ZM13.5 3v5h5M9 12h6M9 16h6"/>',
+    "paper": '<path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10Z" fill="currentColor" fill-opacity=".07"/><path d="M13 3v5a2 2 0 0 0 2 2h5M8 14h8M8 17.5h5"/>',
     "layers": '<path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>',
-    "network": '<rect x="2" y="6" width="5" height="12" rx="1.5"/><rect x="17" y="6" width="5" height="12" rx="1.5"/><path d="M9 9h6l-2-2M15 15H9l2 2"/>',
+    "network": '<path d="M4 18a9 9 0 1 1 16 0M5 12h2M12 5v2M17 12h2M12 14l4-5"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/>',
     "shield": '<path d="m12 3 8 3v5c0 4.8-3.4 8.2-8 10-4.6-1.8-8-5.2-8-10V6ZM8.5 11.5l2.5 2.5 4.5-5"/>',
     "audio": '<path d="M4 9v6M8 6v12M12 3v18M16 6v12M20 9v6"/>',
     "star": '<path d="m12 3 2.78 5.64 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.9Z" fill="currentColor" fill-opacity=".14"/>',
@@ -100,7 +101,9 @@ def main():
             (ROOT/name).write_text(hero(dark, mobile))
             (ROOT/name.replace(".svg", "-static.svg")).write_text(hero(dark, mobile, True))
     for theme, default_color, brand, text in [("light", "#496786", "#2b62b9", "#20334d"), ("dark", "#a9bdd5", "#87b6fb", "#e9f0f8")]:
-        accents = {"layers": ("#3263a8", "#9ac2ff"),
+        accents = {"code": ("#34455b", "#d6e2f1"),
+                   "paper": ("#34455b", "#d6e2f1"),
+                   "layers": ("#3263a8", "#9ac2ff"),
                    "network": ("#217568", "#80d1c0"),
                    "shield": ("#6c50a2", "#c4afff"),
                    "audio": ("#996321", "#e5bb78")}
