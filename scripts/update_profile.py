@@ -83,6 +83,18 @@ def icon(name):
     return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="18" height="18" alt=""></picture>'
 
 
+def concept_summary(project):
+    """Emphasize one curated concept while keeping all text HTML-escaped."""
+    summary = project["summary"]
+    highlight = project.get("highlight")
+    if not highlight:
+        return escape(summary)
+    if highlight not in summary:
+        raise ValueError(f"Highlight missing from summary: {project['repo']}")
+    before, concept, after = summary.partition(highlight)
+    return f"{escape(before)}<strong>{escape(concept)}</strong>{escape(after)}"
+
+
 def render_catalog(catalog, projects):
     """Four research directions in a GitHub-native, two-column table."""
     live = {p["name"]: p for p in projects}
@@ -105,7 +117,7 @@ def render_catalog(catalog, projects):
                 links.append(f'<a href="{escape(project["paper"], quote=True)}">Paper</a>')
             resources = " · " + " · ".join(links) if links else ""
             entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{escape(label)}</b></a>{resources}'
-                           f'<br>{escape(project["summary"])}</p>')
+                           f'<br>{concept_summary(project)}</p>')
         if entries:
             cells.append(f'<td width="50%" valign="top">\n<h3>{icon(group["icon"])} {escape(group["title"])}</h3>\n'
                          + "\n".join(entries) + "\n</td>")

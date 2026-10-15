@@ -52,6 +52,13 @@ class ProfileTests(unittest.TestCase):
         self.assertNotIn("<img>", text)
         self.assertIn("&#124;", text)
 
+    def test_concept_highlighting_escapes_html_and_rejects_missing_terms(self):
+        item = {"repo": "Example", "summary": "<unsafe> with vectors", "highlight": "<unsafe>"}
+        self.assertEqual(profile.concept_summary(item), "<strong>&lt;unsafe&gt;</strong> with vectors")
+        item["highlight"] = "missing"
+        with self.assertRaises(ValueError):
+            profile.concept_summary(item)
+
     def test_both_readmes_share_the_same_complete_generated_content(self):
         catalog = json.loads((profile.ROOT / "profile/catalog.json").read_text())
         records = [repo(p["repo"], 1) for g in catalog for p in g["projects"]]
