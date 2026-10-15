@@ -14,8 +14,8 @@
 </p>
 
 <p align="center">
-  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/projects-dark.svg"><img src="{{ASSET}}/projects-light.svg" width="20" height="20" align="absmiddle" alt=""></picture> <b>Projects</b></a> &nbsp; · &nbsp;
-  <a href="https://vtsouval.github.io/#publications"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/paper-dark.svg"><img src="{{ASSET}}/paper-light.svg" width="20" height="20" align="absmiddle" alt=""></picture> <b>Publications</b></a>
+  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/projects-dark.svg?v={{ICON_REVISION}}"><img src="{{ASSET}}/projects-light.svg?v={{ICON_REVISION}}" width="20" height="20" align="absmiddle" alt=""></picture> <b>Projects</b></a> &nbsp; · &nbsp;
+  <a href="https://vtsouval.github.io/#publications"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/paper-dark.svg?v={{ICON_REVISION}}"><img src="{{ASSET}}/paper-light.svg?v={{ICON_REVISION}}" width="20" height="20" align="absmiddle" alt=""></picture> <b>Publications</b></a>
 </p>
 
 Research code for **collaborative, efficient and trustworthy machine learning**—from federated and split learning to foundation models at the edge.

@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ORG = "Nousphera"
 EXCLUDED = {".github", "nousphera.github.io"}
 ASSET = f"https://raw.githubusercontent.com/{ORG}/.github/main/profile/assets"
+# Bump when changing icons so GitHub's image proxy refreshes existing profiles.
+ICON_REVISION = "2"
 
 
 def fetch_repositories(request=None):
@@ -80,7 +82,7 @@ def safe_text(value):
 
 
 def icon(name, size=18, label=""):
-    return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="{size}" height="{size}" align="absmiddle" alt="{escape(label, quote=True)}"></picture>'
+    return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg?v={ICON_REVISION}"><img src="{ASSET}/{name}-light.svg?v={ICON_REVISION}" width="{size}" height="{size}" align="absmiddle" alt="{escape(label, quote=True)}"></picture>'
 
 
 def breakable_text(text):
@@ -145,7 +147,8 @@ def render_catalog(catalog, projects):
 
 
 def render_profile(template, catalog, projects):
-    return template.replace("{{ASSET}}", ASSET).replace("{{CATALOG}}", render_catalog(catalog, projects))
+    return (template.replace("{{ASSET}}", ASSET).replace("{{ICON_REVISION}}", ICON_REVISION)
+            .replace("{{CATALOG}}", render_catalog(catalog, projects)))
 
 
 def build(root, records, today):

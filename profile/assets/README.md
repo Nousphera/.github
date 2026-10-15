@@ -14,3 +14,5 @@ Edit `scripts/build_visuals.py` and regenerate the artwork. Match each theme exp
 The code-link icon uses [GitHub Octicons `mark-github-24`](https://github.com/primer/octicons/blob/main/icons/mark-github-24.svg), copyright GitHub Inc., under the [MIT license](LICENSE-octicons.txt). Its path is unchanged; light/dark foreground colors are supplied by the profile. Other icons are original artwork.
 
 Inline images use GitHub-supported `align="absmiddle"` to keep symbols centered beside their labels. Keep explicit width and height so the grid remains stable while images load.
+
+After changing icon artwork, increment `ICON_REVISION` in `scripts/update_profile.py` before regenerating the profile. This refreshes GitHub’s image proxy without changing the stable asset filenames.
