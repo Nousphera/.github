@@ -128,10 +128,11 @@ def render_catalog(catalog, projects):
             target = project.get("project") or live[name]["url"]
             links = []
             if project.get("project"):
-                links.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label)} · Code repository">{icon("code", 24, "Code repository")}</a>')
+                links.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label)} · Code repository">{icon("github", 24, "Code repository")}</a>')
             if project.get("paper"):
-                links.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label)} · Read paper">{icon("paper", 24, "Read paper")}</a>')
-            resources = " " + "&nbsp;".join(links) if links else ""
+                links.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label)} · Read paper">{icon("article", 24, "Read paper")}</a>')
+            # Word joiners keep the two image links on the same line on phones.
+            resources = " " + "&nbsp;".join(f"&#8288;{link}&#8288;" for link in links) if links else ""
             entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{breakable_text(label)}</b></a>{resources}'
                            f'<br>{concept_summary(project)}</p>')
         if entries:
