@@ -11,7 +11,7 @@
   @keyframes flow {to{stroke-dashoffset:-76}}
   @keyframes pulse {50%{opacity:.4}}
   @media(prefers-reduced-motion:reduce) {.phrase,.flow,.pulse{animation:none} .p1{opacity:1} .p2,.p3{display:none}}
-  
+
 </style>
 
 <rect x=".5" y=".5" width="959" height="309" rx="22" fill="#f5f8fc" stroke="#d6e0ec"/>

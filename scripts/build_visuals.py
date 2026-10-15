@@ -43,7 +43,7 @@ def hero(dark=False, mobile=False, static=False):
   @keyframes flow {{to{{stroke-dashoffset:-76}}}}
   @keyframes pulse {{50%{{opacity:.4}}}}
   @media(prefers-reduced-motion:reduce) {{.phrase,.flow,.pulse{{animation:none}} .p1{{opacity:1}} .p2,.p3{{display:none}}}}
-  {static_css}
+{static_css}
 </style>
 
 <rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="22" fill="{bg}" stroke="{border}"/>
