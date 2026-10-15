@@ -91,7 +91,8 @@
         "summary": "Invisible backdoors: attacks and defenses.",
         "project": "https://nousphera.github.io/FiBA/",
         "paper": "https://doi.org/10.1007/978-981-96-4836-8_13",
-        "highlight": "Invisible backdoors"
+        "highlight": "Invisible backdoors",
+        "highlighted": false
       }
     ],
     "icon": "shield"
@@ -119,7 +120,8 @@
         "summary": "Few-shot multilingual keyword spotting.",
         "project": "https://nousphera.github.io/PLiX/",
         "paper": "https://arxiv.org/abs/2305.03058",
-        "highlight": "Few-shot multilingual"
+        "highlight": "Few-shot multilingual",
+        "highlighted": false
       },
       {
         "repo": "DA_MLDG",
@@ -127,7 +129,8 @@
         "project": "https://nousphera.github.io/DA_MLDG/",
         "paper": "https://ieeexplore.ieee.org/document/10150265/",
         "label": "DA-MLDG",
-        "highlight": "Domain-aware meta-learning"
+        "highlight": "Domain-aware meta-learning",
+        "highlighted": false
       }
     ],
     "icon": "audio"

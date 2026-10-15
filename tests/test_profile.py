@@ -59,6 +59,16 @@ class ProfileTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             profile.concept_summary(item)
 
+    def test_hidden_highlights_do_not_reappear_as_more_projects(self):
+        catalog = [{"title": "Direction", "icon": "layers", "projects": [
+            {"repo": "Visible", "summary": "A method."},
+            {"repo": "Hidden", "summary": "Another method.", "highlighted": False}]}]
+        projects = profile.select_projects([repo("Visible"), repo("Hidden")])
+        text = profile.render_catalog(catalog, projects)
+        self.assertIn("Visible", text)
+        self.assertNotIn("Hidden", text)
+        self.assertNotIn("More projects", text)
+
     def test_both_readmes_share_the_same_complete_generated_content(self):
         catalog = json.loads((profile.ROOT / "profile/catalog.json").read_text())
         records = [repo(p["repo"], 1) for g in catalog for p in g["projects"]]

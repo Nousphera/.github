@@ -23,7 +23,8 @@ the GitHub API rate limit. Never commit a token.
   projects** until assigned a direction in `profile/catalog.json`.
 - The four curated directions form a two-by-two table. Each project title links
   to its project page when available, otherwise to its repository. Code and paper
-  links are optional; add only published resources.
+  links are optional; add only published resources. Set `highlighted: false` to
+  omit a project from the profile while keeping it in the full project catalog.
 - `data/latest.json` records the current public repository catalog. API failures,
   malformed records and duplicates abort generation before any files are changed.
 - The workflow uses GitHub's built-in token. Write access is limited to this

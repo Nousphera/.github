@@ -79,8 +79,8 @@ def safe_text(value):
     return text
 
 
-def icon(name):
-    return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="18" height="18" alt=""></picture>'
+def icon(name, size=18, label=""):
+    return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="{size}" height="{size}" alt="{escape(label, quote=True)}"></picture>'
 
 
 def breakable_text(text):
@@ -120,20 +120,20 @@ def render_catalog(catalog, projects):
             if name in known:
                 raise ValueError(f"Duplicate catalog entry: {name}")
             known.add(name)
-            if name not in live:
+            if name not in live or not project.get("highlighted", True):
                 continue
             label = project.get("label", name)
             target = project.get("project") or live[name]["url"]
             links = []
             if project.get("project"):
-                links.append(f'<a href="{escape(live[name]["url"], quote=True)}">Code</a>')
+                links.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label)} · Code repository">{icon("code", 18, "Code repository")}</a>')
             if project.get("paper"):
-                links.append(f'<a href="{escape(project["paper"], quote=True)}">Paper</a>')
-            resources = " · " + " · ".join(links) if links else ""
+                links.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label)} · Read paper">{icon("paper", 18, "Read paper")}</a>')
+            resources = " &nbsp; " + " &nbsp; ".join(links) if links else ""
             entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{breakable_text(label)}</b></a>{resources}'
                            f'<br>{concept_summary(project)}</p>')
         if entries:
-            cells.append(f'<td width="50%" valign="top">\n<h4>{icon(group["icon"])} {breakable_text(group["title"])}</h4>\n'
+            cells.append(f'<td width="50%" valign="top">\n<h4>{icon(group["icon"], 20)} {breakable_text(group["title"])}</h4>\n'
                          + "\n".join(entries) + "\n</td>")
     rows = ["<tr>\n" + "\n".join(cells[i:i+2]) + "\n</tr>" for i in range(0, len(cells), 2)]
     grid = '<table width="100%">\n' + "\n".join(rows) + "\n</table>"

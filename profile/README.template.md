@@ -20,6 +20,6 @@
 
 Research code for **collaborative, efficient and trustworthy machine learning**—from federated and split learning to foundation models at the edge.
 
-### Our Research Projects
+### Highlighted Research Projects
 
 {{CATALOG}}
