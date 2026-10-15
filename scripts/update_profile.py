@@ -83,16 +83,30 @@ def icon(name):
     return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="18" height="18" alt=""></picture>'
 
 
+def breakable_text(text):
+    """Allow narrow GitHub table cells to wrap long compound terms naturally."""
+    text = escape(text)
+    for word, split in (("autoencoders", "auto<wbr>encoders"),
+                        ("FedCompress", "Fed<wbr>Compress"),
+                        ("EncCluster", "Enc<wbr>Cluster"),
+                        ("DeltaMask", "Delta<wbr>Mask"),
+                        ("semi-supervised", "semi-<wbr>supervised"),
+                        ("Semi-supervised", "Semi-<wbr>supervised"),
+                        ("Trustworthy", "Trust<wbr>worthy")):
+        text = text.replace(word, split)
+    return text
+
+
 def concept_summary(project):
     """Emphasize one curated concept while keeping all text HTML-escaped."""
     summary = project["summary"]
     highlight = project.get("highlight")
     if not highlight:
-        return escape(summary)
+        return breakable_text(summary)
     if highlight not in summary:
         raise ValueError(f"Highlight missing from summary: {project['repo']}")
     before, concept, after = summary.partition(highlight)
-    return f"{escape(before)}<strong>{escape(concept)}</strong>{escape(after)}"
+    return f"{breakable_text(before)}<strong>{breakable_text(concept)}</strong>{breakable_text(after)}"
 
 
 def render_catalog(catalog, projects):
@@ -116,10 +130,10 @@ def render_catalog(catalog, projects):
             if project.get("paper"):
                 links.append(f'<a href="{escape(project["paper"], quote=True)}">Paper</a>')
             resources = " · " + " · ".join(links) if links else ""
-            entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{escape(label)}</b></a>{resources}'
+            entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{breakable_text(label)}</b></a>{resources}'
                            f'<br>{concept_summary(project)}</p>')
         if entries:
-            cells.append(f'<td width="50%" valign="top">\n<h3>{icon(group["icon"])} {escape(group["title"])}</h3>\n'
+            cells.append(f'<td width="50%" valign="top">\n<h4>{icon(group["icon"])} {breakable_text(group["title"])}</h4>\n'
                          + "\n".join(entries) + "\n</td>")
     rows = ["<tr>\n" + "\n".join(cells[i:i+2]) + "\n</tr>" for i in range(0, len(cells), 2)]
     grid = '<table width="100%">\n' + "\n".join(rows) + "\n</table>"
