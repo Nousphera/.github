@@ -46,8 +46,9 @@ embedded in GitHub’s image renderer. Essential meaning is present in the image
 alt text and visible prose, so animation is never required to understand the page.
 The research overview has static reduced-motion variants. Project tags use normal
 links with meaningful alternative text and hover descriptions. Each project and its
-resource icons form an inline group; ordinary spaces between groups let the rows
-wrap to the available width. Do not put these links in a non-wrapping table, which
+resource icons form an inline-block group using GitHub's native `kbd` styling;
+ordinary spaces between groups let the rows wrap to the available width without
+orphaned resource icons. Do not put these links in a non-wrapping table, which
 adds a border and horizontal scrollbar. Color and category icons identify each
 direction together. All links work with keyboards and touch.
 Original vector assets are included under this repository's license. The GitHub

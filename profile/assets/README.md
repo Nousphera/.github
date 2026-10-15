@@ -30,8 +30,11 @@ light/dark and reduced-motion variants. Gentle color emphasis and traveling unde
 signals are decorative; titles remain visible throughout. The overview does not imply
 that the categories form sequential stages.
 
-`project-<repository>-*.svg` tags repeat each direction's icon and color. They are normal
+`project-label-<repository>-*.svg` labels repeat each direction's icon and color. They are normal
 links in the README, with an accessible project/category label and a compact hover
 description. Paper and code icons are grouped beside each tag; the groups wrap to
-additional rows on smaller screens without a surrounding table. The scheduled workflow
+additional rows on smaller screens without a surrounding table. GitHub's native
+`kbd` styling keeps each label and its resource links together as an inline block;
+the SVG itself has no extra border, avoiding nested frames. The earlier framed
+`project-<repository>-*.svg` assets remain for cached profile versions. The scheduled workflow
 rebuilds these assets alongside the catalog so changes stay consistent.

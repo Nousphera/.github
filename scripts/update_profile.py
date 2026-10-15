@@ -181,21 +181,21 @@ def render_overview(catalog, projects):
             target = project.get("project") or live[name]["url"]
             hint = f'{label} · {group["title"]} · {project["summary"]}'
             tag = (f'<a href="{escape(target, quote=True)}" title="{escape(hint, quote=True)}">'
-                        f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/project-{name}-dark.svg">'
-                        f'<img src="{ASSET}/project-{name}-light.svg" width="{project_tag_width(label)}" height="30" '
+                        f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/project-label-{name}-dark.svg">'
+                        f'<img src="{ASSET}/project-label-{name}-light.svg" width="{project_tag_width(label)-8}" height="30" '
                         f'align="absmiddle" alt="Open {escape(label, quote=True)} · {escape(group["title"], quote=True)}"></picture></a>')
             resources = []
             if project.get("project"):
                 resources.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label, quote=True)} · Code repository">'
-                                 f'{icon("github", 24, label + " code repository")}</a>')
+                                 f'{icon("github", 20, label + " code repository")}</a>')
             if project.get("paper"):
                 resources.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label, quote=True)} · Read paper">'
-                                 f'{icon("article", 24, "Read " + label + " paper")}</a>')
-            # A group stays together when space permits; normal spaces between
-            # groups allow the browser to wrap them without a scrolling table.
+                                 f'{icon("article", 20, "Read " + label + " paper")}</a>')
+            # GitHub strips custom CSS. Its native kbd styling is inline-block,
+            # so each linked resource group wraps as a unit even in Safari.
             if resources:
-                tag += '&#8288;&nbsp;&#8288;' + '&#8288;'.join(resources) + '&#8288;'
-            tags.append('<span>' + tag + '</span>')
+                tag += '&nbsp;' + ''.join(resources)
+            tags.append('<kbd>' + tag + '</kbd>')
     return picture + '\n\n<p align="center">\n' + '\n'.join(tags) + '\n</p>'
 
 

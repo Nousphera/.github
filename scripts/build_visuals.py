@@ -157,17 +157,18 @@ text{{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;text-anchor:
 </svg>\n'''
 
 
-def project_tag(group, project, dark=False):
+def project_tag(group, project, dark=False, framed=True):
     label = project.get("label", project["repo"])
-    width = project_tag_width(label)
+    width = project_tag_width(label) - (0 if framed else 8)
     accent = PALETTE[group["icon"]][dark]
     background = "#0d1117" if dark else "#ffffff"
+    frame = (f'<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{background}"/>\n'
+             f'<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{accent}" fill-opacity=".08" stroke="{accent}" stroke-opacity=".38"/>') if framed else ""
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="30" viewBox="0 0 {width} 30" role="img" aria-labelledby="title">
 <title id="title">{escape(label)} · {escape(group['title'])}</title>
-<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{background}"/>
-<rect x=".5" y="2.5" width="{width-1}" height="25" rx="12.5" fill="{accent}" fill-opacity=".08" stroke="{accent}" stroke-opacity=".38"/>
-<g transform="translate(7 8.5) scale(.541667)" color="{accent}" fill="none" stroke="{accent}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[group['icon']]}</g>
-<text x="25" y="19.2" fill="{accent}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">{escape(label)}</text>
+{frame}
+<g transform="translate({7 if framed else 3} 8.5) scale(.541667)" color="{accent}" fill="none" stroke="{accent}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[group['icon']]}</g>
+<text x="{25 if framed else 21}" y="19.2" fill="{accent}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">{escape(label)}</text>
 </svg>\n'''
 
 
@@ -184,6 +185,7 @@ def main():
             for project in group["projects"]:
                 if project.get("highlighted", True):
                     (ROOT/f'project-{project["repo"]}-{theme}.svg').write_text(project_tag(group, project, dark))
+                    (ROOT/f'project-label-{project["repo"]}-{theme}.svg').write_text(project_tag(group, project, dark, framed=False))
     for dark in (False, True):
         for mobile in (False, True):
             name = f'hero-{"mobile-" if mobile else ""}{"dark" if dark else "light"}.svg'

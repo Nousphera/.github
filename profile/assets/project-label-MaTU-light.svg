@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 60 30" role="img" aria-labelledby="title">
+<title id="title">MaTU · Foundation Models</title>
+
+<g transform="translate(3 8.5) scale(.541667)" color="#3263a8" fill="none" stroke="#3263a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></g>
+<text x="21" y="19.2" fill="#3263a8" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">MaTU</text>
+</svg>

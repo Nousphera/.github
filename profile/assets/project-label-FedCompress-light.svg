@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="30" viewBox="0 0 106 30" role="img" aria-labelledby="title">
+<title id="title">FedCompress · Efficient Collaborative Learning</title>
+
+<g transform="translate(3 8.5) scale(.541667)" color="#217568" fill="none" stroke="#217568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a9 9 0 1 1 16 0M5 12h2M12 5v2M17 12h2M12 14l4-5"/><circle cx="12" cy="14" r="1.5" fill="currentColor" stroke="none"/></g>
+<text x="21" y="19.2" fill="#217568" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" font-weight="600">FedCompress</text>
+</svg>

@@ -94,6 +94,7 @@ class ProfileTests(unittest.TestCase):
         records = [repo(p["repo"]) for g in catalog for p in g["projects"]]
         text = profile.render_catalog(catalog, profile.select_projects(records))
         self.assertEqual(text.count('alt="Open '), 12)
+        self.assertEqual(text.count('<kbd>'), 12)
         self.assertNotIn("<table", text)
         self.assertNotIn("nowrap", text)
         self.assertNotIn("<details", text)
@@ -103,7 +104,7 @@ class ProfileTests(unittest.TestCase):
         for group in catalog:
             self.assertIn(group["title"], text)
         for name in ("PLiX", "DA_MLDG", "FiBA"):
-            self.assertNotIn(f"project-{name}-", text)
+            self.assertNotIn(f"project-label-{name}-", text)
         self.assertIn("https://doi.org/10.1145/3626242", text)
         self.assertIn("https://github.com/Nousphera/FedLN", text)
         self.assertIn('alt="FedLN code repository"', text)
