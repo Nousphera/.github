@@ -4,6 +4,10 @@
     "summary": "Adapt larger models with smaller client workloads.",
     "projects": [
       {
+        "repo": "SDAPT",
+        "summary": "Split-based domain-adaptive pretraining for vision foundation models."
+      },
+      {
         "repo": "AE_PSL",
         "summary": "Aligned autoencoders for compact split learning.",
         "project": "https://nousphera.github.io/AE_PSL/",

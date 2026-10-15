@@ -80,14 +80,14 @@ def hero(dark=False, mobile=False, static=False):
 
 
 ICONS = {
-    "projects": '<rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.5"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.5"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.5"/><rect x="14" y="14" width="6.5" height="6.5" rx="1.5"/>',
+    "projects": '<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v16H6.5A2.5 2.5 0 0 1 4 17.5ZM4 17.5A2.5 2.5 0 0 1 6.5 15H20"/><path d="m11 7-2 2 2 2m4-4 2 2-2 2" stroke-width="1.6"/>',
     "person": '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-1.5a7 7 0 0 1 14 0V20"/>',
     "paper": '<path d="M6.5 3h7l5 5v13h-13V4a1 1 0 0 1 1-1ZM13.5 3v5h5M9 12h6M9 16h6"/>',
     "layers": '<path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>',
     "network": '<path d="M7.5 5h9M6.2 7.2l4.6 9.6M17.8 7.2l-4.6 9.6"/><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/>',
     "shield": '<path d="m12 3 8 3v5c0 4.8-3.4 8.2-8 10-4.6-1.8-8-5.2-8-10V6ZM8.5 11.5l2.5 2.5 4.5-5"/>',
     "audio": '<path d="M4 9v6M8 6v12M12 3v18M16 6v12M20 9v6"/>',
-    "star": '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3L7.5 14 3 9.6l6.2-.9Z"/>',
+    "star": '<path d="m12 3 2.78 5.64 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.93 1.06-6.2L3 9.54l6.22-.9Z" fill="currentColor" fill-opacity=".14"/>',
 }
 
 
@@ -100,7 +100,7 @@ def main():
             (ROOT/name.replace(".svg", "-static.svg")).write_text(hero(dark, mobile, True))
     for theme, color, brand, text in [("light", "#496786", "#2b62b9", "#20334d"), ("dark", "#a9bdd5", "#87b6fb", "#e9f0f8")]:
         for name, paths in ICONS.items():
-            (ROOT/f"{name}-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>\n')
+            (ROOT/f"{name}-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" color="{color}" stroke="{color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>\n')
         (ROOT/f"brand-mark-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img"><title>Noösphere</title>{brand_mark(brand)}</svg>\n')
         (ROOT/f"wordmark-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 44" role="img"><title>Noösphere</title><g transform="translate(0 2)">{brand_mark(brand)}</g><text x="51" y="31" fill="{text}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-weight="650" font-size="28" letter-spacing="-.6">Noösphere</text></svg>\n')
 

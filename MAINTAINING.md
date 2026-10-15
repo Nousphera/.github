@@ -14,25 +14,20 @@ Python 3.10+ and its standard library are sufficient. No packages or API keys ar
 required for a local refresh. `GITHUB_TOKEN` is used when available to increase
 the GitHub API rate limit. Never commit a token.
 
-## Star tracker
+## Project catalog
 
-- The workflow runs daily at **06:17 UTC**, on relevant main-branch changes, and
-  through **Actions → Organization profile → Run workflow**. GitHub may delay
-  scheduled runs; the profile shows the date of the latest successful snapshot.
-- Counts include **all public project repositories owned by Nousphera**, including
-  forks and archived repositories. Only `.github` and `nousphera.github.io` are
-  excluded. Newly public repositories are included automatically and appear in
-  **More projects** until added to a curated group.
-- The total is the sum of repository stars, **not unique people**. It can decrease
-  when users remove stars or repositories leave the public set.
-- `data/latest.json` contains the current per-repository counts.
-  `data/star-history.json` retains one actual observation per UTC date. A second
-  run on the same date refreshes that day's observation. Earlier dates are kept;
-  no historical counts are inferred. The plot shows up to 90 daily snapshots.
-- All API pages must succeed. Empty, malformed and duplicate responses abort
-  generation, preserving the previous published snapshot.
-- The workflow uses GitHub's built-in token, with write access confined to this
-  repository. Pull requests run tests only. There is no external statistics service.
+- The catalog refreshes daily at **06:17 UTC**, on relevant main-branch changes,
+  and through **Actions → Organization profile → Run workflow**.
+- Only public project repositories owned by Nousphera are shown; `.github` and
+  `nousphera.github.io` are excluded. Newly public projects appear in **More
+  projects** until assigned a direction in `profile/catalog.json`.
+- The four curated directions form a two-by-two table. Each project title links
+  to its project page when available, otherwise to its repository. Code and paper
+  links are optional; add only published resources.
+- `data/latest.json` records the current public repository catalog. API failures,
+  malformed records and duplicates abort generation before any files are changed.
+- The workflow uses GitHub's built-in token. Write access is limited to this
+  repository; pull requests run validation only.
 
 ## Visuals and accessibility
 
@@ -41,8 +36,8 @@ desktop/mobile and light/dark variants. Its subtle word and network animation
 uses a dedicated static image under `prefers-reduced-motion`, including when
 embedded in GitHub’s image renderer. Essential meaning is present in the image
 alt text and visible prose, so animation is never required to understand the page.
-Expandable groups use native GitHub `<details>` elements and work with keyboards
+The research grid uses native tables and ordinary links that work with keyboards
 and touch. Original vector assets are included under this repository's license.
 
 The organization profile is a GitHub README, so layout uses supported Markdown,
-`<picture>` images and native disclosure controls. Custom page scripts are not used.
+`<picture>` images and native tables. Custom page scripts are not used.
