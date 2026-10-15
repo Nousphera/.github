@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="310" viewBox="0 0 960 310" role="img" aria-labelledby="title desc">
+<title id="title">Noösphere — intelligence, closer to the edge</title>
+<desc id="desc">Learn together. Adapt efficiently. Build trust. Research in collaborative and efficient machine learning.</desc>
+<style>
+  text {font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+  .phrase {opacity:0;animation:words 12s ease-in-out infinite}
+  .p1 {opacity:1} .p2 {animation-delay:-8s} .p3 {animation-delay:-4s}
+  .flow {animation:flow 5s linear infinite}
+  .pulse {transform-origin:center;animation:pulse 4s ease-in-out infinite}
+  @keyframes words {0%,30%,100%{opacity:0} 5%,25%{opacity:1} 33%,99%{opacity:0}}
+  @keyframes flow {to{stroke-dashoffset:-76}}
+  @keyframes pulse {50%{opacity:.4}}
+  @media(prefers-reduced-motion:reduce) {.phrase,.flow,.pulse{animation:none} .p1{opacity:1} .p2,.p3{display:none}}
+  .phrase,.flow,.pulse{animation:none}.p1{opacity:1}.p2,.p3{display:none}
+</style>
+
+<rect x=".5" y=".5" width="959" height="309" rx="22" fill="#f5f8fc" stroke="#d6e0ec"/>
+<g transform="translate(42 36)" fill="#2b62b9"><circle cx="7" cy="2" r="7"/><circle cx="19" cy="8" r="7" opacity=".65"/><circle cx="10" cy="18" r="7" opacity=".35"/></g>
+<text x="83" y="53" fill="#20334d" font-size="22" font-weight="650" letter-spacing="-.4">Noösphere</text>
+<text x="42" y="137" fill="#20334d" font-size="56" font-weight="650" letter-spacing="-2">Intelligence,</text>
+<text x="42" y="204" fill="#20334d" font-size="56" font-weight="650" letter-spacing="-2">closer to the edge.</text>
+<g transform="translate(42 263)" font-size="24" font-weight="500">
+  <text class="phrase p1" fill="#2b62b9" x="0" y="0">Learn together.</text>
+  <text class="phrase p2" fill="#177d6b" x="0" y="0">Adapt efficiently.</text>
+  <text class="phrase p3" fill="#7354b6" x="0" y="0">Build trust.</text>
+</g>
+
+<g transform="translate(766 165)" fill="none" stroke="#d6e0ec" stroke-width="1.5">
+  <circle r="105" stroke-dasharray="2 8"/>
+  <path d="M0 0L0 -96M0 0L-84 49M0 0L84 49"/>
+  <g stroke="#2b62b9" stroke-width="2" stroke-dasharray="4 15" opacity=".65" class="flow">
+    <path d="M0 -84V-22M-74 43L-19 11M74 43L19 11"/>
+  </g>
+  <g fill="#f5f8fc" stroke="#2b62b9">
+    <rect x="-27" y="-26" width="54" height="52" rx="14"/>
+    <path d="M-12 -10H12M-12 0H12M-12 10H12" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cy="-96" r="22"/>
+    <circle cx="-84" cy="49" r="22"/>
+    <circle cx="84" cy="49" r="22"/>
+    <path d="M-8 -104H8V-92H-8ZM-3 -88H3M-92 41H-76V53H-92ZM-87 57H-81M76 41H92V53H76ZM81 57H87" stroke-linejoin="round"/>
+  </g>
+  <circle r="35" stroke="#2b62b9" opacity=".16" class="pulse"/>
+</g>
+</svg>

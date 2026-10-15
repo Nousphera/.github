@@ -1,6 +1,10 @@
 <p align="center">
   <a href="https://nousphera.github.io/">
     <picture>
+      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-mobile-dark-static.svg">
+      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-mobile-light-static.svg">
+      <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-dark-static.svg">
+      <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-light-static.svg">
       <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-mobile-dark.svg">
       <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-mobile-light.svg">
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/hero-dark.svg">

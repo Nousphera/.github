@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "profile/assets"
 
 
-def hero(dark=False, mobile=False):
+def hero(dark=False, mobile=False, static=False):
     bg, fg, muted, blue, green, purple, border = (
         ("#101923", "#e9f0f8", "#a3b3c5", "#87b6fb", "#72d0bd", "#c4afff", "#2b3c51")
         if dark else ("#f5f8fc", "#20334d", "#5b6e86", "#2b62b9", "#177d6b", "#7354b6", "#d6e0ec")
@@ -29,6 +29,7 @@ def hero(dark=False, mobile=False):
   </g>
   <circle r="35" stroke="{blue}" opacity=".16" class="pulse"/>
 </g>'''
+    static_css = ".phrase,.flow,.pulse{animation:none}.p1{opacity:1}.p2,.p3{display:none}" if static else ""
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">
 <title id="title">Noösphere — intelligence, closer to the edge</title>
 <desc id="desc">Learn together. Adapt efficiently. Build trust. Research in collaborative and efficient machine learning.</desc>
@@ -42,6 +43,7 @@ def hero(dark=False, mobile=False):
   @keyframes flow {{to{{stroke-dashoffset:-76}}}}
   @keyframes pulse {{50%{{opacity:.4}}}}
   @media(prefers-reduced-motion:reduce) {{.phrase,.flow,.pulse{{animation:none}} .p1{{opacity:1}} .p2,.p3{{display:none}}}}
+  {static_css}
 </style>
 
 <rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="22" fill="{bg}" stroke="{border}"/>
@@ -71,6 +73,7 @@ def main():
         for mobile in (False, True):
             name = f'hero-{"mobile-" if mobile else ""}{"dark" if dark else "light"}.svg'
             (ROOT/name).write_text(hero(dark, mobile))
+            (ROOT/name.replace(".svg", "-static.svg")).write_text(hero(dark, mobile, True))
     for name, paths in ICONS.items():
         (ROOT/f"{name}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6087b8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>\n')
 

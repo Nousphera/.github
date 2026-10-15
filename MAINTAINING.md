@@ -38,7 +38,8 @@ the GitHub API rate limit. Never commit a token.
 
 `scripts/build_visuals.py` creates the local SVG header and icons. The header has
 desktop/mobile and light/dark variants. Its subtle word and network animation
-stops under `prefers-reduced-motion`. Essential meaning is present in the image
+uses a dedicated static image under `prefers-reduced-motion`, including when
+embedded in GitHub’s image renderer. Essential meaning is present in the image
 alt text and visible prose, so animation is never required to understand the page.
 Expandable groups use native GitHub `<details>` elements and work with keyboards
 and touch. Original vector assets are included under this repository's license.

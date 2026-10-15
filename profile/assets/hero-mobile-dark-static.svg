@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="292" viewBox="0 0 520 292" role="img" aria-labelledby="title desc">
+<title id="title">Noösphere — intelligence, closer to the edge</title>
+<desc id="desc">Learn together. Adapt efficiently. Build trust. Research in collaborative and efficient machine learning.</desc>
+<style>
+  text {font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+  .phrase {opacity:0;animation:words 12s ease-in-out infinite}
+  .p1 {opacity:1} .p2 {animation-delay:-8s} .p3 {animation-delay:-4s}
+  .flow {animation:flow 5s linear infinite}
+  .pulse {transform-origin:center;animation:pulse 4s ease-in-out infinite}
+  @keyframes words {0%,30%,100%{opacity:0} 5%,25%{opacity:1} 33%,99%{opacity:0}}
+  @keyframes flow {to{stroke-dashoffset:-76}}
+  @keyframes pulse {50%{opacity:.4}}
+  @media(prefers-reduced-motion:reduce) {.phrase,.flow,.pulse{animation:none} .p1{opacity:1} .p2,.p3{display:none}}
+  .phrase,.flow,.pulse{animation:none}.p1{opacity:1}.p2,.p3{display:none}
+</style>
+
+<rect x=".5" y=".5" width="519" height="291" rx="22" fill="#101923" stroke="#2b3c51"/>
+<g transform="translate(28 36)" fill="#87b6fb"><circle cx="7" cy="2" r="7"/><circle cx="19" cy="8" r="7" opacity=".65"/><circle cx="10" cy="18" r="7" opacity=".35"/></g>
+<text x="69" y="53" fill="#e9f0f8" font-size="22" font-weight="650" letter-spacing="-.4">Noösphere</text>
+<text x="28" y="127" fill="#e9f0f8" font-size="45" font-weight="650" letter-spacing="-2">Intelligence,</text>
+<text x="28" y="183" fill="#e9f0f8" font-size="45" font-weight="650" letter-spacing="-2">closer to the edge.</text>
+<g transform="translate(28 242)" font-size="24" font-weight="500">
+  <text class="phrase p1" fill="#87b6fb" x="0" y="0">Learn together.</text>
+  <text class="phrase p2" fill="#72d0bd" x="0" y="0">Adapt efficiently.</text>
+  <text class="phrase p3" fill="#c4afff" x="0" y="0">Build trust.</text>
+</g>
+
+</svg>
