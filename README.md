@@ -22,12 +22,12 @@
 ### Highlighted Research Projects
 
 <p align="center"><picture>
-<source media="(prefers-reduced-motion: reduce) and (max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-dark-static.svg?v=2">
-<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-light-static.svg?v=2">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-phone-dark-static.svg?v=2">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-phone-light-static.svg?v=2">
 <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-dark-static.svg?v=2">
 <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-light-static.svg?v=2">
-<source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-dark.svg?v=2">
-<source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-mobile-light.svg?v=2">
+<source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-phone-dark.svg?v=2">
+<source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-phone-light.svg?v=2">
 <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-dark.svg?v=2">
 <img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/research-overview-light.svg?v=2" width="960" alt="Foundation Models; Efficient Collaborative Learning; Trustworthy Learning; Speech and Audio">
 </picture></p>

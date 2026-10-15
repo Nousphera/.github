@@ -178,7 +178,7 @@ def main():
         theme = "dark" if dark else "light"
         for mobile in (False, True):
             for static in (False, True):
-                name = f'research-overview-{"mobile-" if mobile else ""}{theme}{"-static" if static else ""}.svg'
+                name = f'research-overview-{"phone-" if mobile else ""}{theme}{"-static" if static else ""}.svg'
                 (ROOT/name).write_text(research_overview(catalog, dark, mobile, static))
         for group in catalog:
             for project in group["projects"]:

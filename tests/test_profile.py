@@ -97,7 +97,7 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(overview.count('alt="Open '), 12)
         self.assertEqual(overview.count("<table>"), 1)
         self.assertIn("<td nowrap>", overview)
-        self.assertIn("research-overview-mobile-dark-static.svg", overview)
+        self.assertIn("research-overview-phone-dark-static.svg", overview)
         self.assertIn("prefers-reduced-motion: reduce", overview)
         for group in catalog:
             self.assertIn(group["title"], overview)

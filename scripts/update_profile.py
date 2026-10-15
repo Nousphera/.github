@@ -167,7 +167,7 @@ def render_overview(catalog, projects):
             media.append("(max-width: 600px)")
         if dark:
             media.append("(prefers-color-scheme: dark)")
-        name = f'research-overview-{"mobile-" if mobile else ""}{"dark" if dark else "light"}{"-static" if reduced else ""}.svg'
+        name = f'research-overview-{"phone-" if mobile else ""}{"dark" if dark else "light"}{"-static" if reduced else ""}.svg'
         sources.append(f'<source media="{" and ".join(media)}" srcset="{ASSET}/{name}?v=2">')
     picture = '<p align="center"><picture>\n' + "\n".join(sources)
     picture += f'\n<img src="{ASSET}/research-overview-light.svg?v=2" width="960" alt="{escape(description, quote=True)}">\n</picture></p>'
