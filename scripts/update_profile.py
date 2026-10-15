@@ -180,48 +180,37 @@ def render_overview(catalog, projects):
             label = project.get("label", name)
             target = project.get("project") or live[name]["url"]
             hint = f'{label} · {group["title"]} · {project["summary"]}'
-            tags.append(f'<a href="{escape(target, quote=True)}" title="{escape(hint, quote=True)}">'
+            tag = (f'<a href="{escape(target, quote=True)}" title="{escape(hint, quote=True)}">'
                         f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/project-{name}-dark.svg">'
                         f'<img src="{ASSET}/project-{name}-light.svg" width="{project_tag_width(label)}" height="30" '
                         f'align="absmiddle" alt="Open {escape(label, quote=True)} · {escape(group["title"], quote=True)}"></picture></a>')
-    # GitHub preserves nowrap and gives tables native horizontal scrolling.
-    # Keep real links so keyboard focus scrolls each project into view.
-    return picture + '\n\n<table><tr><td nowrap>\n' + '\n'.join(tags) + '\n</td></tr></table>'
+            resources = []
+            if project.get("project"):
+                resources.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label, quote=True)} · Code repository">'
+                                 f'{icon("github", 24, label + " code repository")}</a>')
+            if project.get("paper"):
+                resources.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label, quote=True)} · Read paper">'
+                                 f'{icon("article", 24, "Read " + label + " paper")}</a>')
+            # A group stays together when space permits; normal spaces between
+            # groups allow the browser to wrap them without a scrolling table.
+            if resources:
+                tag += '&#8288;&nbsp;&#8288;' + '&#8288;'.join(resources) + '&#8288;'
+            tags.append('<span>' + tag + '</span>')
+    return picture + '\n\n<p align="center">\n' + '\n'.join(tags) + '\n</p>'
 
 
 def render_catalog(catalog, projects):
-    """Animated overview and linked tags, with optional native resource details."""
-    live = {p["name"]: p for p in projects}
-    known, cells = set(), []
+    """One research section with wrapping project, code and paper links."""
+    live = {p["name"] for p in projects}
+    known, visible = set(), False
     for group in catalog:
-        entries = []
         for project in group["projects"]:
             name = project["repo"]
             if name in known:
                 raise ValueError(f"Duplicate catalog entry: {name}")
             known.add(name)
-            if name not in live or not project.get("highlighted", True):
-                continue
-            label = project.get("label", name)
-            target = project.get("project") or live[name]["url"]
-            links = []
-            if project.get("project"):
-                links.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label)} · Code repository">{icon("github", 24, "Code repository")}</a>')
-            if project.get("paper"):
-                links.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label)} · Read paper">{icon("article", 24, "Read paper")}</a>')
-            # Word joiners keep the two image links on the same line on phones.
-            resources = " " + "&nbsp;".join(f"&#8288;{link}&#8288;" for link in links) if links else ""
-            entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{breakable_text(label)}</b></a>{resources}'
-                           f'<br>{concept_summary(project)}</p>')
-        if entries:
-            cells.append(f'<td width="50%" valign="top">\n<h4>{icon(group["icon"], 24)} {breakable_text(group["title"])}</h4>\n'
-                         + "\n".join(entries) + "\n</td>")
-    rows = ["<tr>\n" + "\n".join(cells[i:i+2]) + "\n</tr>" for i in range(0, len(cells), 2)]
-    grid = '<table width="100%">\n' + "\n".join(rows) + "\n</table>"
-    if cells:
-        grid = (render_overview(catalog, projects)
-                + '\n\n<details>\n<summary>Paper &amp; code links</summary>\n\n'
-                + grid + '\n\n</details>')
+            visible |= name in live and project.get("highlighted", True)
+    grid = render_overview(catalog, projects) if visible else ""
     extra = [p for p in projects if p["name"] not in known]
     if extra:
         rows = [f'| **[{p["name"]}]({p["url"]})** | {safe_text(p["description"])} |' for p in extra]
