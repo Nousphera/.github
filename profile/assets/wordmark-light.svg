@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 44" role="img"><title>Noösphere</title><g transform="translate(0 2)"><g fill="#2b62b9" stroke="#2b62b9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 10L30 17L16 31Z" fill="none" stroke-width="2.2" opacity=".35"/>
+<circle cx="10" cy="10" r="5.7" stroke="none"/>
+<circle cx="30" cy="17" r="5.7" stroke="none" opacity=".82"/>
+<circle cx="16" cy="31" r="5.7" stroke="none" opacity=".62"/>
+</g></g><text x="51" y="31" fill="#20334d" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-weight="650" font-size="28" letter-spacing="-.6">Noösphere</text></svg>

@@ -4,6 +4,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "profile/assets"
 
 
+def brand_mark(color):
+    """Three precise nodes, linked as one collective; transparent at every size."""
+    return f'''<g fill="{color}" stroke="{color}" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 10L30 17L16 31Z" fill="none" stroke-width="2.2" opacity=".35"/>
+<circle cx="10" cy="10" r="5.7" stroke="none"/>
+<circle cx="30" cy="17" r="5.7" stroke="none" opacity=".82"/>
+<circle cx="16" cy="31" r="5.7" stroke="none" opacity=".62"/>
+</g>'''
+
+
 def hero(dark=False, mobile=False, static=False):
     bg, fg, muted, blue, green, purple, border = (
         ("#101923", "#e9f0f8", "#a3b3c5", "#87b6fb", "#72d0bd", "#c4afff", "#2b3c51")
@@ -20,12 +30,21 @@ def hero(dark=False, mobile=False, static=False):
     <path d="M0 -84V-22M-74 43L-19 11M74 43L19 11"/>
   </g>
   <g fill="{bg}" stroke="{blue}">
-    <rect x="-27" y="-26" width="54" height="52" rx="14"/>
-    <path d="M-12 -10H12M-12 0H12M-12 10H12" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="-29" y="-29" width="58" height="58" rx="15"/>
+    <g stroke-width="1.8" stroke-linecap="round">
+      <rect x="-13" y="-17" width="26" height="9" rx="2.5"/>
+      <rect x="-13" y="-4.5" width="26" height="9" rx="2.5"/>
+      <rect x="-13" y="8" width="26" height="9" rx="2.5"/>
+      <path d="M-8 -12.5H-6M-8 0H-6M-8 12.5H-6"/>
+    </g>
     <circle cy="-96" r="22"/>
     <circle cx="-84" cy="49" r="22"/>
     <circle cx="84" cy="49" r="22"/>
-    <path d="M-8 -104H8V-92H-8ZM-3 -88H3M-92 41H-76V53H-92ZM-87 57H-81M76 41H92V53H76ZM81 57H87" stroke-linejoin="round"/>
+    <g stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-9" y="-104" width="18" height="12" rx="2"/><path d="M0 -92V-88M-4 -88H4"/>
+      <rect x="-93" y="41" width="18" height="12" rx="2"/><path d="M-84 53V57M-88 57H-80"/>
+      <rect x="75" y="41" width="18" height="12" rx="2"/><path d="M84 53V57M80 57H88"/>
+    </g>
   </g>
   <circle r="35" stroke="{blue}" opacity=".16" class="pulse"/>
 </g>'''
@@ -47,7 +66,7 @@ def hero(dark=False, mobile=False, static=False):
 </style>
 
 <rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="22" fill="{bg}" stroke="{border}"/>
-<g transform="translate({left} 36)" fill="{blue}"><circle cx="7" cy="2" r="7"/><circle cx="19" cy="8" r="7" opacity=".65"/><circle cx="10" cy="18" r="7" opacity=".35"/></g>
+<g transform="translate({left-3} 26) scale(.8)">{brand_mark(blue)}</g>
 <text x="{left+41}" y="53" fill="{fg}" font-size="22" font-weight="650" letter-spacing="-.4">Noösphere</text>
 <text x="{left}" y="{y1}" fill="{fg}" font-size="{size}" font-weight="650" letter-spacing="-2">Intelligence,</text>
 <text x="{left}" y="{y2}" fill="{fg}" font-size="{size}" font-weight="650" letter-spacing="-2">closer to the edge.</text>
@@ -61,9 +80,14 @@ def hero(dark=False, mobile=False, static=False):
 
 
 ICONS = {
-    "projects": '<rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/>',
-    "person": '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',
-    "paper": '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/>',
+    "projects": '<rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.5"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.5"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.5"/><rect x="14" y="14" width="6.5" height="6.5" rx="1.5"/>',
+    "person": '<circle cx="12" cy="7.5" r="3.5"/><path d="M5 20v-1.5a7 7 0 0 1 14 0V20"/>',
+    "paper": '<path d="M6.5 3h7l5 5v13h-13V4a1 1 0 0 1 1-1ZM13.5 3v5h5M9 12h6M9 16h6"/>',
+    "layers": '<path d="m12 3 9 5-9 5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/>',
+    "network": '<path d="M7.5 5h9M6.2 7.2l4.6 9.6M17.8 7.2l-4.6 9.6"/><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/>',
+    "shield": '<path d="m12 3 8 3v5c0 4.8-3.4 8.2-8 10-4.6-1.8-8-5.2-8-10V6ZM8.5 11.5l2.5 2.5 4.5-5"/>',
+    "audio": '<path d="M4 9v6M8 6v12M12 3v18M16 6v12M20 9v6"/>',
+    "star": '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3L7.5 14 3 9.6l6.2-.9Z"/>',
 }
 
 
@@ -74,8 +98,11 @@ def main():
             name = f'hero-{"mobile-" if mobile else ""}{"dark" if dark else "light"}.svg'
             (ROOT/name).write_text(hero(dark, mobile))
             (ROOT/name.replace(".svg", "-static.svg")).write_text(hero(dark, mobile, True))
-    for name, paths in ICONS.items():
-        (ROOT/f"{name}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6087b8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>\n')
+    for theme, color, brand, text in [("light", "#496786", "#2b62b9", "#20334d"), ("dark", "#a9bdd5", "#87b6fb", "#e9f0f8")]:
+        for name, paths in ICONS.items():
+            (ROOT/f"{name}-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>\n')
+        (ROOT/f"brand-mark-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img"><title>Noösphere</title>{brand_mark(brand)}</svg>\n')
+        (ROOT/f"wordmark-{theme}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 44" role="img"><title>Noösphere</title><g transform="translate(0 2)">{brand_mark(brand)}</g><text x="51" y="31" fill="{text}" font-family="Inter,system-ui,-apple-system,Segoe UI,sans-serif" font-weight="650" font-size="28" letter-spacing="-.6">Noösphere</text></svg>\n')
 
 
 if __name__ == "__main__":

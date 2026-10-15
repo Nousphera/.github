@@ -14,9 +14,9 @@
 </p>
 
 <p align="center">
-  <a href="https://nousphera.github.io/"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/projects.svg" width="17" height="17" alt=""> <b>Explore projects</b></a> &nbsp; · &nbsp;
-  <a href="https://vtsouval.github.io/"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/person.svg" width="17" height="17" alt=""> <b>About Vasileios</b></a> &nbsp; · &nbsp;
-  <a href="https://vtsouval.github.io/#publications"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/paper.svg" width="17" height="17" alt=""> <b>Publications</b></a>
+  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/projects-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/projects-light.svg" width="18" height="18" alt=""></picture> <b>Explore projects</b></a> &nbsp; · &nbsp;
+  <a href="https://vtsouval.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/person-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/person-light.svg" width="18" height="18" alt=""></picture> <b>About Vasileios</b></a> &nbsp; · &nbsp;
+  <a href="https://vtsouval.github.io/#publications"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/paper-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/paper-light.svg" width="18" height="18" alt=""></picture> <b>Publications</b></a>
 </p>
 
 Research code for **collaborative, efficient and trustworthy machine learning**—from federated and split learning to foundation models at the edge.
@@ -34,7 +34,7 @@ Research code for **collaborative, efficient and trustworthy machine learning**�
 ### Explore by direction
 
 <details>
-<summary><b>Foundation models at the edge</b> · 4 projects</summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/layers-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/layers-light.svg" width="18" height="18" alt=""></picture> <b>Foundation models</b> · 4 projects</summary>
 
 Adapt larger models with smaller client workloads.
 
@@ -48,7 +48,7 @@ Adapt larger models with smaller client workloads.
 </details>
 
 <details>
-<summary><b>Efficient collaboration</b> · 2 projects</summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/network-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/network-light.svg" width="18" height="18" alt=""></picture> <b>Efficient collaboration</b> · 2 projects</summary>
 
 Reduce what clients need to communicate.
 
@@ -60,7 +60,7 @@ Reduce what clients need to communicate.
 </details>
 
 <details>
-<summary><b>Reliable and trustworthy learning</b> · 4 projects</summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/shield-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/shield-light.svg" width="18" height="18" alt=""></picture> <b>Trustworthy learning</b> · 4 projects</summary>
 
 Learn with imperfect labels; study security and unlearning.
 
@@ -74,7 +74,7 @@ Learn with imperfect labels; study security and unlearning.
 </details>
 
 <details>
-<summary><b>Speech and audio</b> · 4 projects</summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/audio-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/audio-light.svg" width="18" height="18" alt=""></picture> <b>Speech and audio</b> · 4 projects</summary>
 
 Learn across languages, domains and limited labels.
 
@@ -89,7 +89,7 @@ Learn across languages, domains and limited labels.
 
 <a name="star-tracker"></a>
 <details>
-<summary><b>Star tracker</b> · 9 stars across 14 public projects</summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/star-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/star-light.svg" width="18" height="18" alt=""></picture> <b>Star tracker</b> · 9 stars across 14 public projects</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/stars-dark.svg">

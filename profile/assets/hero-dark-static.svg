@@ -15,7 +15,12 @@
 </style>
 
 <rect x=".5" y=".5" width="959" height="309" rx="22" fill="#101923" stroke="#2b3c51"/>
-<g transform="translate(42 36)" fill="#87b6fb"><circle cx="7" cy="2" r="7"/><circle cx="19" cy="8" r="7" opacity=".65"/><circle cx="10" cy="18" r="7" opacity=".35"/></g>
+<g transform="translate(39 26) scale(.8)"><g fill="#87b6fb" stroke="#87b6fb" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 10L30 17L16 31Z" fill="none" stroke-width="2.2" opacity=".35"/>
+<circle cx="10" cy="10" r="5.7" stroke="none"/>
+<circle cx="30" cy="17" r="5.7" stroke="none" opacity=".82"/>
+<circle cx="16" cy="31" r="5.7" stroke="none" opacity=".62"/>
+</g></g>
 <text x="83" y="53" fill="#e9f0f8" font-size="22" font-weight="650" letter-spacing="-.4">Noösphere</text>
 <text x="42" y="137" fill="#e9f0f8" font-size="56" font-weight="650" letter-spacing="-2">Intelligence,</text>
 <text x="42" y="204" fill="#e9f0f8" font-size="56" font-weight="650" letter-spacing="-2">closer to the edge.</text>
@@ -32,12 +37,21 @@
     <path d="M0 -84V-22M-74 43L-19 11M74 43L19 11"/>
   </g>
   <g fill="#101923" stroke="#87b6fb">
-    <rect x="-27" y="-26" width="54" height="52" rx="14"/>
-    <path d="M-12 -10H12M-12 0H12M-12 10H12" stroke-width="2.4" stroke-linecap="round"/>
+    <rect x="-29" y="-29" width="58" height="58" rx="15"/>
+    <g stroke-width="1.8" stroke-linecap="round">
+      <rect x="-13" y="-17" width="26" height="9" rx="2.5"/>
+      <rect x="-13" y="-4.5" width="26" height="9" rx="2.5"/>
+      <rect x="-13" y="8" width="26" height="9" rx="2.5"/>
+      <path d="M-8 -12.5H-6M-8 0H-6M-8 12.5H-6"/>
+    </g>
     <circle cy="-96" r="22"/>
     <circle cx="-84" cy="49" r="22"/>
     <circle cx="84" cy="49" r="22"/>
-    <path d="M-8 -104H8V-92H-8ZM-3 -88H3M-92 41H-76V53H-92ZM-87 57H-81M76 41H92V53H76ZM81 57H87" stroke-linejoin="round"/>
+    <g stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-9" y="-104" width="18" height="12" rx="2"/><path d="M0 -92V-88M-4 -88H4"/>
+      <rect x="-93" y="41" width="18" height="12" rx="2"/><path d="M-84 53V57M-88 57H-80"/>
+      <rect x="75" y="41" width="18" height="12" rx="2"/><path d="M84 53V57M80 57H88"/>
+    </g>
   </g>
   <circle r="35" stroke="#87b6fb" opacity=".16" class="pulse"/>
 </g>

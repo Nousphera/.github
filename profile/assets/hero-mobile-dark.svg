@@ -15,7 +15,12 @@
 </style>
 
 <rect x=".5" y=".5" width="519" height="291" rx="22" fill="#101923" stroke="#2b3c51"/>
-<g transform="translate(28 36)" fill="#87b6fb"><circle cx="7" cy="2" r="7"/><circle cx="19" cy="8" r="7" opacity=".65"/><circle cx="10" cy="18" r="7" opacity=".35"/></g>
+<g transform="translate(25 26) scale(.8)"><g fill="#87b6fb" stroke="#87b6fb" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 10L30 17L16 31Z" fill="none" stroke-width="2.2" opacity=".35"/>
+<circle cx="10" cy="10" r="5.7" stroke="none"/>
+<circle cx="30" cy="17" r="5.7" stroke="none" opacity=".82"/>
+<circle cx="16" cy="31" r="5.7" stroke="none" opacity=".62"/>
+</g></g>
 <text x="69" y="53" fill="#e9f0f8" font-size="22" font-weight="650" letter-spacing="-.4">Noösphere</text>
 <text x="28" y="127" fill="#e9f0f8" font-size="45" font-weight="650" letter-spacing="-2">Intelligence,</text>
 <text x="28" y="183" fill="#e9f0f8" font-size="45" font-weight="650" letter-spacing="-2">closer to the edge.</text>

@@ -95,6 +95,10 @@ def safe_text(value):
     return text
 
 
+def icon(name):
+    return f'<picture><source media="(prefers-color-scheme: dark)" srcset="{ASSET}/{name}-dark.svg"><img src="{ASSET}/{name}-light.svg" width="18" height="18" alt=""></picture>'
+
+
 def render_catalog(catalog, projects):
     live = {p["name"]: p for p in projects}
     known, blocks = set(), []
@@ -109,7 +113,7 @@ def render_catalog(catalog, projects):
                 continue
             rows.append(f'| **[{name}]({live[name]["url"]})** | {p["summary"]}<br>[Project]({p["project"]}) · [Paper]({p["paper"]}) |')
         if rows:
-            blocks.append(f'<details>\n<summary><b>{group["title"]}</b> · {len(rows)} projects</summary>\n\n{group["summary"]}\n\n| Project | Method and resources |\n| :--- | :--- |\n' + "\n".join(rows) + "\n\n</details>")
+            blocks.append(f'<details>\n<summary>{icon(group["icon"])} <b>{group["title"]}</b> · {len(rows)} projects</summary>\n\n{group["summary"]}\n\n| Project | Method and resources |\n| :--- | :--- |\n' + "\n".join(rows) + "\n\n</details>")
     extra = [p for p in projects if p["name"] not in known]
     if extra:
         rows = [f'| **[{p["name"]}]({p["url"]})** | {safe_text(p["description"])} |' for p in extra]
@@ -144,7 +148,7 @@ def render_profile(template, catalog, projects, history):
     table = "\n".join(f'| [{p["name"]}]({p["url"]}) | {p["stars"]} |' for p in projects)
     tracker = f'''<a name="star-tracker"></a>
 <details>
-<summary><b>Star tracker</b> · {total} stars across {len(projects)} public projects</summary>
+<summary>{icon('star')} <b>Star tracker</b> · {total} stars across {len(projects)} public projects</summary>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="{ASSET}/stars-dark.svg">

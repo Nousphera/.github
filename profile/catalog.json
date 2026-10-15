@@ -1,6 +1,6 @@
 [
   {
-    "title": "Foundation models at the edge",
+    "title": "Foundation models",
     "summary": "Adapt larger models with smaller client workloads.",
     "projects": [
       {
@@ -27,7 +27,8 @@
         "project": "https://nousphera.github.io/DeltaMask/",
         "paper": "https://doi.org/10.1109/BigData62323.2024.10825398"
       }
-    ]
+    ],
+    "icon": "layers"
   },
   {
     "title": "Efficient collaboration",
@@ -45,10 +46,11 @@
         "project": "https://nousphera.github.io/FedCode/",
         "paper": "https://ieeexplore.ieee.org/document/10646450/"
       }
-    ]
+    ],
+    "icon": "network"
   },
   {
-    "title": "Reliable and trustworthy learning",
+    "title": "Trustworthy learning",
     "summary": "Learn with imperfect labels; study security and unlearning.",
     "projects": [
       {
@@ -75,7 +77,8 @@
         "project": "https://nousphera.github.io/FiBA/",
         "paper": "https://doi.org/10.1007/978-981-96-4836-8_13"
       }
-    ]
+    ],
+    "icon": "shield"
   },
   {
     "title": "Speech and audio",
@@ -105,6 +108,7 @@
         "project": "https://nousphera.github.io/DA_MLDG/",
         "paper": "https://ieeexplore.ieee.org/document/10150265/"
       }
-    ]
+    ],
+    "icon": "audio"
   }
 ]

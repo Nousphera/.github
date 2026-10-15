@@ -14,9 +14,9 @@
 </p>
 
 <p align="center">
-  <a href="https://nousphera.github.io/"><img src="{{ASSET}}/projects.svg" width="17" height="17" alt=""> <b>Explore projects</b></a> &nbsp; · &nbsp;
-  <a href="https://vtsouval.github.io/"><img src="{{ASSET}}/person.svg" width="17" height="17" alt=""> <b>About Vasileios</b></a> &nbsp; · &nbsp;
-  <a href="https://vtsouval.github.io/#publications"><img src="{{ASSET}}/paper.svg" width="17" height="17" alt=""> <b>Publications</b></a>
+  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/projects-dark.svg"><img src="{{ASSET}}/projects-light.svg" width="18" height="18" alt=""></picture> <b>Explore projects</b></a> &nbsp; · &nbsp;
+  <a href="https://vtsouval.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/person-dark.svg"><img src="{{ASSET}}/person-light.svg" width="18" height="18" alt=""></picture> <b>About Vasileios</b></a> &nbsp; · &nbsp;
+  <a href="https://vtsouval.github.io/#publications"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/paper-dark.svg"><img src="{{ASSET}}/paper-light.svg" width="18" height="18" alt=""></picture> <b>Publications</b></a>
 </p>
 
 Research code for **collaborative, efficient and trustworthy machine learning**—from federated and split learning to foundation models at the edge.
