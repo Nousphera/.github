@@ -4,20 +4,16 @@
     "summary": "Adapt larger models with smaller client workloads.",
     "projects": [
       {
-        "repo": "SDAPT",
-        "summary": "Split-based domain-adaptive pretraining for vision foundation models."
-      },
-      {
-        "repo": "AE_PSL",
-        "summary": "Aligned autoencoders for compact split learning.",
-        "project": "https://nousphera.github.io/AE_PSL/",
-        "paper": "https://arxiv.org/abs/2607.17913"
-      },
-      {
         "repo": "MPSL",
         "summary": "Parallel split learning for multimodal models.",
         "project": "https://nousphera.github.io/MPSL/",
         "paper": "https://arxiv.org/abs/2502.06355"
+      },
+      {
+        "repo": "DeltaMask",
+        "summary": "Compressed binary masks for federated fine-tuning.",
+        "project": "https://nousphera.github.io/DeltaMask/",
+        "paper": "https://doi.org/10.1109/BigData62323.2024.10825398"
       },
       {
         "repo": "MaTU",
@@ -26,10 +22,8 @@
         "paper": "https://arxiv.org/abs/2502.06376"
       },
       {
-        "repo": "DeltaMask",
-        "summary": "Compressed binary masks for federated fine-tuning.",
-        "project": "https://nousphera.github.io/DeltaMask/",
-        "paper": "https://doi.org/10.1109/BigData62323.2024.10825398"
+        "repo": "SDAPT",
+        "summary": "Domain-adaptive pretraining through split learning."
       }
     ],
     "icon": "layers"
@@ -38,6 +32,13 @@
     "title": "Efficient collaboration",
     "summary": "Reduce what clients need to communicate.",
     "projects": [
+      {
+        "repo": "AE_PSL",
+        "summary": "Aligned autoencoders for compact split learning.",
+        "project": "https://nousphera.github.io/AE_PSL/",
+        "paper": "https://arxiv.org/abs/2607.17913",
+        "label": "AE-PSL"
+      },
       {
         "repo": "FedCompress",
         "summary": "Weight clustering with server-side distillation.",
@@ -110,7 +111,8 @@
         "repo": "DA_MLDG",
         "summary": "Domain-aware meta-learning for speech emotion recognition.",
         "project": "https://nousphera.github.io/DA_MLDG/",
-        "paper": "https://ieeexplore.ieee.org/document/10150265/"
+        "paper": "https://ieeexplore.ieee.org/document/10150265/",
+        "label": "DA-MLDG"
       }
     ],
     "icon": "audio"

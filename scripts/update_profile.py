@@ -96,6 +96,7 @@ def render_catalog(catalog, projects):
             known.add(name)
             if name not in live:
                 continue
+            label = project.get("label", name)
             target = project.get("project") or live[name]["url"]
             links = []
             if project.get("project"):
@@ -103,7 +104,7 @@ def render_catalog(catalog, projects):
             if project.get("paper"):
                 links.append(f'<a href="{escape(project["paper"], quote=True)}">Paper</a>')
             resources = " · " + " · ".join(links) if links else ""
-            entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{escape(name)}</b></a>{resources}'
+            entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{escape(label)}</b></a>{resources}'
                            f'<br>{escape(project["summary"])}</p>')
         if entries:
             cells.append(f'<td width="50%" valign="top">\n<h3>{icon(group["icon"])} {escape(group["title"])}</h3>\n'

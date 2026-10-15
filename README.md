@@ -26,14 +26,14 @@ Research code for **collaborative, efficient and trustworthy machine learning**�
 <tr>
 <td width="50%" valign="top">
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/layers-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/layers-light.svg" width="18" height="18" alt=""></picture> Foundation models</h3>
-<p><a href="https://github.com/Nousphera/SDAPT"><b>SDAPT</b></a><br>Split-based domain-adaptive pretraining for vision foundation models.</p>
-<p><a href="https://nousphera.github.io/AE_PSL/"><b>AE_PSL</b></a> · <a href="https://github.com/Nousphera/AE_PSL">Code</a> · <a href="https://arxiv.org/abs/2607.17913">Paper</a><br>Aligned autoencoders for compact split learning.</p>
 <p><a href="https://nousphera.github.io/MPSL/"><b>MPSL</b></a> · <a href="https://github.com/Nousphera/MPSL">Code</a> · <a href="https://arxiv.org/abs/2502.06355">Paper</a><br>Parallel split learning for multimodal models.</p>
-<p><a href="https://nousphera.github.io/MaTU/"><b>MaTU</b></a> · <a href="https://github.com/Nousphera/MaTU">Code</a> · <a href="https://arxiv.org/abs/2502.06376">Paper</a><br>Unified task vectors for many-task adaptation.</p>
 <p><a href="https://nousphera.github.io/DeltaMask/"><b>DeltaMask</b></a> · <a href="https://github.com/Nousphera/DeltaMask">Code</a> · <a href="https://doi.org/10.1109/BigData62323.2024.10825398">Paper</a><br>Compressed binary masks for federated fine-tuning.</p>
+<p><a href="https://nousphera.github.io/MaTU/"><b>MaTU</b></a> · <a href="https://github.com/Nousphera/MaTU">Code</a> · <a href="https://arxiv.org/abs/2502.06376">Paper</a><br>Unified task vectors for many-task adaptation.</p>
+<p><a href="https://github.com/Nousphera/SDAPT"><b>SDAPT</b></a><br>Domain-adaptive pretraining through split learning.</p>
 </td>
 <td width="50%" valign="top">
 <h3><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/network-dark.svg"><img src="https://raw.githubusercontent.com/Nousphera/.github/main/profile/assets/network-light.svg" width="18" height="18" alt=""></picture> Efficient collaboration</h3>
+<p><a href="https://nousphera.github.io/AE_PSL/"><b>AE-PSL</b></a> · <a href="https://github.com/Nousphera/AE_PSL">Code</a> · <a href="https://arxiv.org/abs/2607.17913">Paper</a><br>Aligned autoencoders for compact split learning.</p>
 <p><a href="https://nousphera.github.io/FedCompress/"><b>FedCompress</b></a> · <a href="https://github.com/Nousphera/FedCompress">Code</a> · <a href="https://doi.org/10.1109/ICASSP48485.2024.10447174">Paper</a><br>Weight clustering with server-side distillation.</p>
 <p><a href="https://nousphera.github.io/FedCode/"><b>FedCode</b></a> · <a href="https://github.com/Nousphera/FedCode">Code</a> · <a href="https://ieeexplore.ieee.org/document/10646450/">Paper</a><br>Exchange compact codebooks across clients.</p>
 </td>
@@ -51,7 +51,7 @@ Research code for **collaborative, efficient and trustworthy machine learning**�
 <p><a href="https://nousphera.github.io/FedSTAR/"><b>FedSTAR</b></a> · <a href="https://github.com/Nousphera/FedSTAR">Code</a> · <a href="https://doi.org/10.1145/3520128">Paper</a><br>Federated self-training for audio recognition.</p>
 <p><a href="https://nousphera.github.io/FedSER/"><b>FedSER</b></a> · <a href="https://github.com/Nousphera/FedSER">Code</a> · <a href="https://ieeexplore.ieee.org/document/9767445">Paper</a><br>Semi-supervised federated speech emotion recognition.</p>
 <p><a href="https://nousphera.github.io/PLiX/"><b>PLiX</b></a> · <a href="https://github.com/Nousphera/PLiX">Code</a> · <a href="https://arxiv.org/abs/2305.03058">Paper</a><br>Few-shot multilingual keyword spotting.</p>
-<p><a href="https://nousphera.github.io/DA_MLDG/"><b>DA_MLDG</b></a> · <a href="https://github.com/Nousphera/DA_MLDG">Code</a> · <a href="https://ieeexplore.ieee.org/document/10150265/">Paper</a><br>Domain-aware meta-learning for speech emotion recognition.</p>
+<p><a href="https://nousphera.github.io/DA_MLDG/"><b>DA-MLDG</b></a> · <a href="https://github.com/Nousphera/DA_MLDG">Code</a> · <a href="https://ieeexplore.ieee.org/document/10150265/">Paper</a><br>Domain-aware meta-learning for speech emotion recognition.</p>
 </td>
 </tr>
 </table>
