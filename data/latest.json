@@ -1,0 +1,122 @@
+{
+  "organization": "Nousphera",
+  "date": "2026-10-15",
+  "excluded": [
+    ".github",
+    "nousphera.github.io"
+  ],
+  "projects": [
+    {
+      "name": "MPSL",
+      "url": "https://github.com/Nousphera/MPSL",
+      "description": "Fine-tuning multimodal models using parallel split learning.",
+      "stars": 7,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "AE_PSL",
+      "url": "https://github.com/Nousphera/AE_PSL",
+      "description": "Communication-efficient parallel split learning with aligned autoencoders.",
+      "stars": 2,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "DA_MLDG",
+      "url": "https://github.com/Nousphera/DA_MLDG",
+      "description": "Domain-aware meta-learning for speech emotion recognition across domains.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "DeltaMask",
+      "url": "https://github.com/Nousphera/DeltaMask",
+      "description": "Communication-efficient federated fine-tuning of vision foundation models through compressed binary masks.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "EFU",
+      "url": "https://github.com/Nousphera/EFU",
+      "description": "Federated unlearning through functional encryption.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "EncCluster",
+      "url": "https://github.com/Nousphera/EncCluster",
+      "description": "Functional encryption for federated learning with weight clustering and probabilistic filters.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FedCode",
+      "url": "https://github.com/Nousphera/FedCode",
+      "description": "Communication-efficient federated learning through codebook exchange.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FedCompress",
+      "url": "https://github.com/Nousphera/FedCompress",
+      "description": "Communication-efficient federated learning through adaptive weight clustering and server-side distillation.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FedLN",
+      "url": "https://github.com/Nousphera/FedLN",
+      "description": "Federated learning with noisy labels through label correction, distillation and noise-aware aggregation.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FedSER",
+      "url": "https://github.com/Nousphera/FedSER",
+      "description": "Semi-supervised federated learning for speech emotion recognition.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FedSTAR",
+      "url": "https://github.com/Nousphera/FedSTAR",
+      "description": "Semi-supervised federated audio recognition through self-training.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "FiBA",
+      "url": "https://github.com/Nousphera/FiBA",
+      "description": "Invisible backdoor attacks and defenses in federated learning.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "MaTU",
+      "url": "https://github.com/Nousphera/MaTU",
+      "description": "Many-task federated fine-tuning through unified task vectors.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "PLiX",
+      "url": "https://github.com/Nousphera/PLiX",
+      "description": "Plug-and-play multilingual few-shot spoken word recognition.",
+      "stars": 0,
+      "archived": false,
+      "fork": false
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Foundation models at the edge",
+    "summary": "Adapt larger models with smaller client workloads.",
+    "projects": [
+      {
+        "repo": "AE_PSL",
+        "summary": "Aligned autoencoders for compact split learning.",
+        "project": "https://nousphera.github.io/AE_PSL/",
+        "paper": "https://arxiv.org/abs/2607.17913"
+      },
+      {
+        "repo": "MPSL",
+        "summary": "Parallel split learning for multimodal models.",
+        "project": "https://nousphera.github.io/MPSL/",
+        "paper": "https://arxiv.org/abs/2502.06355"
+      },
+      {
+        "repo": "MaTU",
+        "summary": "Unified task vectors for many-task adaptation.",
+        "project": "https://nousphera.github.io/MaTU/",
+        "paper": "https://arxiv.org/abs/2502.06376"
+      },
+      {
+        "repo": "DeltaMask",
+        "summary": "Compressed binary masks for federated fine-tuning.",
+        "project": "https://nousphera.github.io/DeltaMask/",
+        "paper": "https://doi.org/10.1109/BigData62323.2024.10825398"
+      }
+    ]
+  },
+  {
+    "title": "Efficient collaboration",
+    "summary": "Reduce what clients need to communicate.",
+    "projects": [
+      {
+        "repo": "FedCompress",
+        "summary": "Weight clustering with server-side distillation.",
+        "project": "https://nousphera.github.io/FedCompress/",
+        "paper": "https://doi.org/10.1109/ICASSP48485.2024.10447174"
+      },
+      {
+        "repo": "FedCode",
+        "summary": "Exchange compact codebooks across clients.",
+        "project": "https://nousphera.github.io/FedCode/",
+        "paper": "https://ieeexplore.ieee.org/document/10646450/"
+      }
+    ]
+  },
+  {
+    "title": "Reliable and trustworthy learning",
+    "summary": "Learn with imperfect labels; study security and unlearning.",
+    "projects": [
+      {
+        "repo": "FedLN",
+        "summary": "Three interventions for noisy labels.",
+        "project": "https://nousphera.github.io/FedLN/",
+        "paper": "https://doi.org/10.1145/3626242"
+      },
+      {
+        "repo": "EncCluster",
+        "summary": "Scalable functional encryption with weight clustering.",
+        "project": "https://nousphera.github.io/EncCluster/",
+        "paper": "https://www.sciencedirect.com/science/article/pii/S1574119225000100"
+      },
+      {
+        "repo": "EFU",
+        "summary": "Enforce federated unlearning through encryption.",
+        "project": "https://nousphera.github.io/EFU/",
+        "paper": "https://doi.org/10.1145/3746252.3761091"
+      },
+      {
+        "repo": "FiBA",
+        "summary": "Invisible backdoor attacks and defenses.",
+        "project": "https://nousphera.github.io/FiBA/",
+        "paper": "https://doi.org/10.1007/978-981-96-4836-8_13"
+      }
+    ]
+  },
+  {
+    "title": "Speech and audio",
+    "summary": "Learn across languages, domains and limited labels.",
+    "projects": [
+      {
+        "repo": "FedSTAR",
+        "summary": "Federated self-training for audio recognition.",
+        "project": "https://nousphera.github.io/FedSTAR/",
+        "paper": "https://doi.org/10.1145/3520128"
+      },
+      {
+        "repo": "FedSER",
+        "summary": "Semi-supervised federated speech emotion recognition.",
+        "project": "https://nousphera.github.io/FedSER/",
+        "paper": "https://ieeexplore.ieee.org/document/9767445"
+      },
+      {
+        "repo": "PLiX",
+        "summary": "Few-shot multilingual keyword spotting.",
+        "project": "https://nousphera.github.io/PLiX/",
+        "paper": "https://arxiv.org/abs/2305.03058"
+      },
+      {
+        "repo": "DA_MLDG",
+        "summary": "Domain-aware meta-learning for speech emotion recognition.",
+        "project": "https://nousphera.github.io/DA_MLDG/",
+        "paper": "https://ieeexplore.ieee.org/document/10150265/"
+      }
+    ]
+  }
+]

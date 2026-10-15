@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-10-15",
+    "stars": 9,
+    "repositories": {
+      "MPSL": 7,
+      "AE_PSL": 2,
+      "DA_MLDG": 0,
+      "DeltaMask": 0,
+      "EFU": 0,
+      "EncCluster": 0,
+      "FedCode": 0,
+      "FedCompress": 0,
+      "FedLN": 0,
+      "FedSER": 0,
+      "FedSTAR": 0,
+      "FiBA": 0,
+      "MaTU": 0,
+      "PLiX": 0
+    }
+  }
+]
