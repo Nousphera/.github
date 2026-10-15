@@ -129,7 +129,7 @@ def render_catalog(catalog, projects):
                 links.append(f'<a href="{escape(live[name]["url"], quote=True)}" title="{escape(label)} · Code repository">{icon("code", 18, "Code repository")}</a>')
             if project.get("paper"):
                 links.append(f'<a href="{escape(project["paper"], quote=True)}" title="{escape(label)} · Read paper">{icon("paper", 18, "Read paper")}</a>')
-            resources = " &nbsp; " + " &nbsp; ".join(links) if links else ""
+            resources = " " + "&nbsp;".join(links) if links else ""
             entries.append(f'<p><a href="{escape(target, quote=True)}"><b>{breakable_text(label)}</b></a>{resources}'
                            f'<br>{concept_summary(project)}</p>')
         if entries:

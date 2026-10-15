@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/projects-dark.svg"><img src="{{ASSET}}/projects-light.svg" width="18" height="18" alt=""></picture> <b>Explore projects</b></a> &nbsp; · &nbsp;
+  <a href="https://nousphera.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/projects-dark.svg"><img src="{{ASSET}}/projects-light.svg" width="18" height="18" alt=""></picture> <b>Projects</b></a> &nbsp; · &nbsp;
   <a href="https://vtsouval.github.io/#publications"><picture><source media="(prefers-color-scheme: dark)" srcset="{{ASSET}}/paper-dark.svg"><img src="{{ASSET}}/paper-light.svg" width="18" height="18" alt=""></picture> <b>Publications</b></a>
 </p>
 
