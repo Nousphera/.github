@@ -1,6 +1,6 @@
 {
   "organization": "Nousphera",
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "excluded": [
     ".github",
     "nousphera.github.io"
@@ -50,7 +50,7 @@
     {
       "name": "FedCode",
       "url": "https://github.com/Nousphera/FedCode",
-      "description": "Communication-efficient federated learning through codebook exchange.",
+      "description": "Communication-Efficient Federated Learning via Transferring Codebooks",
       "archived": false,
       "fork": false,
       "stars": 0
@@ -74,7 +74,7 @@
     {
       "name": "FedSER",
       "url": "https://github.com/Nousphera/FedSER",
-      "description": "Semi-supervised federated learning for speech emotion recognition.",
+      "description": "Privacy-preserving Speech Emotion Recognition through Semi-Supervised Federated Learning",
       "archived": false,
       "fork": false,
       "stars": 0
@@ -82,7 +82,7 @@
     {
       "name": "FedSTAR",
       "url": "https://github.com/Nousphera/FedSTAR",
-      "description": "Semi-supervised federated audio recognition through self-training.",
+      "description": "Federated Self-training for Semi-supervised Audio Recognition",
       "archived": false,
       "fork": false,
       "stars": 0
