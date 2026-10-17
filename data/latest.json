@@ -1,11 +1,11 @@
 {
   "organization": "Nousphera",
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "excluded": [
     ".github",
     "nousphera.github.io"
   ],
-  "stars": 9,
+  "stars": 19,
   "projects": [
     {
       "name": "AE_PSL",
@@ -16,12 +16,12 @@
       "stars": 2
     },
     {
-      "name": "DA_MLDG",
-      "url": "https://github.com/Nousphera/DA_MLDG",
-      "description": "Domain-aware meta-learning for speech emotion recognition across domains.",
+      "name": "DA-MLDG",
+      "url": "https://github.com/Nousphera/DA-MLDG",
+      "description": "On efficacy of Meta-Learning for Domain Generalization in Speech Emotion Recognition",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "DeltaMask",
@@ -29,7 +29,7 @@
       "description": "Communication-efficient federated fine-tuning of vision foundation models through compressed binary masks.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "EFU",
@@ -37,7 +37,7 @@
       "description": "Federated unlearning through functional encryption.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "EncCluster",
@@ -45,7 +45,7 @@
       "description": "Functional encryption for federated learning with weight clustering and probabilistic filters.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "FedCode",
@@ -53,7 +53,7 @@
       "description": "Communication-Efficient Federated Learning via Transferring Codebooks",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "FedCompress",
@@ -61,7 +61,7 @@
       "description": "Communication-efficient federated learning through adaptive weight clustering and server-side distillation.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "FedLN",
@@ -69,7 +69,7 @@
       "description": "Federated learning with noisy labels through label correction, distillation and noise-aware aggregation.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "FedSER",
@@ -85,12 +85,12 @@
       "description": "Federated Self-training for Semi-supervised Audio Recognition",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "FiBA",
       "url": "https://github.com/Nousphera/FiBA",
-      "description": "Invisible backdoor attacks and defenses in federated learning.",
+      "description": "On the Effectiveness of Invisible Backdoor Attacks in Federated Learning",
       "archived": false,
       "fork": false,
       "stars": 0
@@ -101,7 +101,7 @@
       "description": "Many-task federated fine-tuning through unified task vectors.",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     },
     {
       "name": "MPSL",
@@ -122,10 +122,10 @@
     {
       "name": "SDAPT",
       "url": "https://github.com/Nousphera/SDAPT",
-      "description": "Split-based Domain Adaptive Pre-Training for VFMs",
+      "description": "Domain Adaptive Pretraining in Split Learning for Vision Foundation Models",
       "archived": false,
       "fork": false,
-      "stars": 0
+      "stars": 1
     }
   ]
 }
