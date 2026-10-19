@@ -63,14 +63,9 @@ class ProfileTests(unittest.TestCase):
             with self.subTest(count=count), self.assertRaises(ValueError):
                 profile.select_projects([repo("Example", count)])
 
-    def test_new_projects_are_discoverable_and_metadata_is_escaped(self):
-        projects = profile.select_projects([repo("New", description='[link](https://bad.example) | <img>\n**bold**')])
-        text = profile.render_catalog([], projects)
-        self.assertIn("More projects", text)
-        self.assertIn("https://github.com/Nousphera/New", text)
-        self.assertNotIn("[link]", text)
-        self.assertNotIn("<img>", text)
-        self.assertIn("&#124;", text)
+    def test_uncatalogued_projects_do_not_create_an_extra_section(self):
+        projects = profile.select_projects([repo("New")])
+        self.assertEqual(profile.render_catalog([], projects), "")
 
     def test_concept_highlighting_escapes_html_and_rejects_missing_terms(self):
         item = {"repo": "Example", "summary": "<unsafe> with vectors", "highlight": "<unsafe>"}

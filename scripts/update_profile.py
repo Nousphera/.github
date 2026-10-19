@@ -210,12 +210,7 @@ def render_catalog(catalog, projects):
                 raise ValueError(f"Duplicate catalog entry: {name}")
             known.add(name)
             visible |= name in live and project.get("highlighted", True)
-    grid = render_overview(catalog, projects) if visible else ""
-    extra = [p for p in projects if p["name"] not in known]
-    if extra:
-        rows = [f'| **[{p["name"]}]({p["url"]})** | {safe_text(p["description"])} |' for p in extra]
-        grid += "\n\n### More projects\n\n| Project | Focus |\n| :--- | :--- |\n" + "\n".join(rows)
-    return grid
+    return render_overview(catalog, projects) if visible else ""
 
 
 def render_profile(template, catalog, projects):
