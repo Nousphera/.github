@@ -8,8 +8,8 @@
   "stars": 19,
   "projects": [
     {
-      "name": "AE_PSL",
-      "url": "https://github.com/Nousphera/AE_PSL",
+      "name": "AE-PSL",
+      "url": "https://github.com/Nousphera/AE-PSL",
       "description": "Communication-efficient parallel split learning with aligned autoencoders.",
       "archived": false,
       "fork": false,

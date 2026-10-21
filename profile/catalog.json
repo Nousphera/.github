@@ -37,9 +37,9 @@
     "summary": "Reduce what clients need to communicate.",
     "projects": [
       {
-        "repo": "AE_PSL",
+        "repo": "AE-PSL",
         "summary": "Aligned autoencoders for compact split learning.",
-        "project": "https://nousphera.github.io/AE_PSL/",
+        "project": "https://nousphera.github.io/AE-PSL/",
         "paper": "https://arxiv.org/abs/2607.17913",
         "label": "AE-PSL",
         "highlight": "Aligned autoencoders"
